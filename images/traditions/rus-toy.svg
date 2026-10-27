@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Матрёшка</title>
+  <rect width="400" height="300" rx="18" fill="#f7eeee"/>
+  <ellipse cx="200" cy="260" rx="62" ry="9" fill="#3a2323" opacity=".08"/>
+  <path d="M200 52 C236 52 252 82 252 108 C252 140 274 162 274 202 C274 242 242 258 200 258 C158 258 126 242 126 202 C126 162 148 140 148 108 C148 82 164 52 200 52 Z" fill="#b0342c" stroke="#3a2323" stroke-width="3"/>
+  <circle cx="200" cy="112" r="34" fill="#fbf5ea" stroke="#3a2323" stroke-width="2.5"/>
+  <path d="M158 104 Q200 48 242 104 Q200 86 158 104 Z" fill="#2f4f7c" stroke="#3a2323" stroke-width="2.5"/>
+  <path d="M158 104 L150 170 L166 176 L172 120 Z" fill="#2f4f7c" stroke="#3a2323" stroke-width="2"/>
+  <path d="M242 104 L250 170 L234 176 L228 120 Z" fill="#2f4f7c" stroke="#3a2323" stroke-width="2"/>
+  <circle cx="188" cy="112" r="2.6" fill="#3a2323"/>
+  <circle cx="212" cy="112" r="2.6" fill="#3a2323"/>
+  <path d="M192 124 Q200 130 208 124" stroke="#b0342c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <circle cx="176" cy="122" r="5" fill="#b0342c" opacity=".45"/>
+  <circle cx="224" cy="122" r="5" fill="#b0342c" opacity=".45"/>
+  <ellipse cx="200" cy="204" rx="42" ry="38" fill="#fbf5ea" stroke="#c9a24a" stroke-width="3"/>
+  <path d="M192 172 L208 188 M208 172 L192 188" stroke="#2f4f7c" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M170 196 L186 212 M186 196 L170 212" stroke="#2f4f7c" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M214 196 L230 212 M230 196 L214 212" stroke="#2f4f7c" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M192 220 L208 236 M208 220 L192 236" stroke="#2f4f7c" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
