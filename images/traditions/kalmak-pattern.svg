@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Калмацкий узор</title>
+  <rect width="400" height="300" rx="18" fill="#eaf1ef"/>
+  <rect x="112" y="34" width="176" height="232" rx="8" fill="#f8f2e4" stroke="#263a38" stroke-width="3"/>
+  <rect x="124" y="46" width="152" height="208" rx="4" fill="none" stroke="#a8402f" stroke-width="3"/>
+  <line x1="100" y1="46" x2="112" y2="46" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="46" x2="300" y2="46" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="58" x2="112" y2="58" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="58" x2="300" y2="58" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="70" x2="112" y2="70" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="70" x2="300" y2="70" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="82" x2="112" y2="82" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="82" x2="300" y2="82" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="94" x2="112" y2="94" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="94" x2="300" y2="94" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="106" x2="112" y2="106" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="106" x2="300" y2="106" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="118" x2="112" y2="118" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="118" x2="300" y2="118" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="130" x2="112" y2="130" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="130" x2="300" y2="130" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="142" x2="112" y2="142" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="142" x2="300" y2="142" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="154" x2="112" y2="154" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="154" x2="300" y2="154" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="166" x2="112" y2="166" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="166" x2="300" y2="166" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="178" x2="112" y2="178" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="178" x2="300" y2="178" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="190" x2="112" y2="190" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="190" x2="300" y2="190" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="202" x2="112" y2="202" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="202" x2="300" y2="202" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="214" x2="112" y2="214" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="214" x2="300" y2="214" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="226" x2="112" y2="226" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="226" x2="300" y2="226" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="238" x2="112" y2="238" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="238" x2="300" y2="238" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="100" y1="250" x2="112" y2="250" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <line x1="288" y1="250" x2="300" y2="250" stroke="#263a38" stroke-width="2" opacity=".3"/>
+  <path d="M146 77 L146 68" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M137 59 Q137 69.8 146 69.8 Q155 69.8 155 59 Q146 50.900000000000006 137 59 Z" fill="#a8402f"/>
+  <path d="M146 98 L152 104 L146 110 L140 104 Z" fill="#2f6f6a"/>
+  <path d="M146 149 L146 140" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M137 131 Q137 141.8 146 141.8 Q155 141.8 155 131 Q146 122.9 137 131 Z" fill="#a8402f"/>
+  <path d="M146 170 L152 176 L146 182 L140 176 Z" fill="#2f6f6a"/>
+  <path d="M146 221 L146 212" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M137 203 Q137 213.8 146 213.8 Q155 213.8 155 203 Q146 194.9 137 203 Z" fill="#a8402f"/>
+  <path d="M186 62 L192 68 L186 74 L180 68 Z" fill="#2f6f6a"/>
+  <path d="M186 113 L186 104" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M177 95 Q177 105.8 186 105.8 Q195 105.8 195 95 Q186 86.9 177 95 Z" fill="#a8402f"/>
+  <path d="M186 134 L192 140 L186 146 L180 140 Z" fill="#2f6f6a"/>
+  <path d="M186 185 L186 176" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M177 167 Q177 177.8 186 177.8 Q195 177.8 195 167 Q186 158.9 177 167 Z" fill="#a8402f"/>
+  <path d="M186 206 L192 212 L186 218 L180 212 Z" fill="#2f6f6a"/>
+  <path d="M226 77 L226 68" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M217 59 Q217 69.8 226 69.8 Q235 69.8 235 59 Q226 50.900000000000006 217 59 Z" fill="#a8402f"/>
+  <path d="M226 98 L232 104 L226 110 L220 104 Z" fill="#2f6f6a"/>
+  <path d="M226 149 L226 140" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M217 131 Q217 141.8 226 141.8 Q235 141.8 235 131 Q226 122.9 217 131 Z" fill="#a8402f"/>
+  <path d="M226 170 L232 176 L226 182 L220 176 Z" fill="#2f6f6a"/>
+  <path d="M226 221 L226 212" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M217 203 Q217 213.8 226 213.8 Q235 213.8 235 203 Q226 194.9 217 203 Z" fill="#a8402f"/>
+  <path d="M266 62 L272 68 L266 74 L260 68 Z" fill="#2f6f6a"/>
+  <path d="M266 113 L266 104" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M257 95 Q257 105.8 266 105.8 Q275 105.8 275 95 Q266 86.9 257 95 Z" fill="#a8402f"/>
+  <path d="M266 134 L272 140 L266 146 L260 140 Z" fill="#2f6f6a"/>
+  <path d="M266 185 L266 176" stroke="#a8402f" stroke-width="2.0" stroke-linecap="round"/><path d="M257 167 Q257 177.8 266 177.8 Q275 177.8 275 167 Q266 158.9 257 167 Z" fill="#a8402f"/>
+  <path d="M266 206 L272 212 L266 218 L260 212 Z" fill="#2f6f6a"/>
+</svg>
