@@ -1,0 +1,309 @@
+/* ==========================================================================
+   games.css — раздел «Народные игры»: переключатель народов и каркас панелей.
+   Стили отдельных игр лежат в css/games/*.css и имеют свои префиксы.
+   Общий файл css/style.css не затрагивается.
+   ========================================================================== */
+
+.mg {
+  --mg-accent: #8c3b2e;
+  --mg-accent-dark: #7a2f24;
+  --mg-accent-soft: #f3e4dd;
+  --mg-ink: #1f1b18;
+  --mg-muted: #6b625b;
+  --mg-line: #d9d2cb;
+  --mg-surface: #ffffff;
+  --mg-soft: #f7f2ed;
+  margin: 2rem 0 3rem;
+  color: var(--mg-ink);
+}
+
+/* Переключатель народов ---------------------------------------------------- */
+
+.mg__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--mg-surface);
+}
+
+.mg__tab {
+  display: inline-block;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid var(--mg-line);
+  border-radius: 999px;
+  color: var(--mg-ink);
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.mg__tab:hover {
+  border-color: var(--mg-accent);
+}
+
+.mg__tab:focus-visible {
+  outline: 2px solid var(--mg-accent);
+  outline-offset: 2px;
+}
+
+/* Активный народ: выбранный по ссылке или первый по умолчанию. */
+body:has(#shortsy:target) .mg__tab[href="#shortsy"],
+body:has(#teleuty:target) .mg__tab[href="#teleuty"],
+body:has(#kalmaki:target) .mg__tab[href="#kalmaki"],
+body:has(#sibirskie-tatary:target) .mg__tab[href="#sibirskie-tatary"],
+body:has(#russkie:target) .mg__tab[href="#russkie"],
+body:not(:has(.mg__panel:target)) .mg__tab[href="#shortsy"] {
+  background: var(--mg-accent);
+  border-color: var(--mg-accent);
+  color: #ffffff;
+}
+
+/* Панели ------------------------------------------------------------------ */
+
+.mg__panel {
+  display: none;
+  scroll-margin-top: 5.5rem;
+}
+
+/* Первый народ виден, пока не выбран другой. */
+.mg__panel--first {
+  display: block;
+}
+
+body:has(.mg__panel:target) .mg__panel--first:not(:target) {
+  display: none;
+}
+
+.mg__panel:target {
+  display: block;
+}
+
+/* Шапка панели ------------------------------------------------------------ */
+
+.mg__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--mg-line);
+}
+
+.mg__name {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--mg-ink);
+}
+
+.mg__game {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--mg-accent);
+}
+
+.mg__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.mg__about {
+  max-width: 62ch;
+}
+
+.mg__subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--mg-accent);
+}
+
+.mg__about p {
+  margin: 0 0 1.2rem;
+  line-height: 1.65;
+}
+
+.mg__about p:last-child {
+  margin-bottom: 0;
+}
+
+.mg__stage {
+  padding: 1rem;
+  border: 1px solid var(--mg-line);
+  border-radius: 14px;
+  background: var(--mg-soft);
+}
+
+/* Общие детали игр (полоски, кнопки, сообщения) ---------------------------- */
+
+.mg__meters {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+}
+
+.mg__meter {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--mg-muted);
+}
+
+.mg__bar {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #e2d8ce;
+  overflow: hidden;
+}
+
+.mg__bar > i {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--mg-accent);
+  transition: width 0.08s linear;
+}
+
+.mg__bar--heat > i {
+  background: linear-gradient(90deg, #d9a05b, #b3472f);
+}
+
+.mg__bar--rival > i {
+  background: #6b625b;
+}
+
+.mg__bar--stamina > i {
+  background: #5d8a63;
+}
+
+.mg__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0;
+}
+
+.mg__btn {
+  appearance: none;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--mg-accent);
+  border-radius: 999px;
+  background: var(--mg-accent);
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.mg__btn:hover {
+  background: var(--mg-accent-dark);
+  border-color: var(--mg-accent-dark);
+}
+
+.mg__btn:focus-visible {
+  outline: 2px solid var(--mg-ink);
+  outline-offset: 2px;
+}
+
+.mg__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mg__btn--ghost {
+  background: #ffffff;
+  color: var(--mg-accent);
+}
+
+.mg__btn--ghost:hover {
+  background: var(--mg-accent-soft);
+  color: var(--mg-accent);
+}
+
+.mg__status {
+  margin: 0.85rem 0 0;
+  min-height: 2.6em;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--mg-muted);
+}
+
+.mg__status--win {
+  color: #2f6b3d;
+  font-weight: 600;
+}
+
+.mg__status--lose {
+  color: #a33a28;
+  font-weight: 600;
+}
+
+/* Узкий экран -------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .mg__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mg__tabs {
+    gap: 0.4rem;
+  }
+
+  .mg__tab {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .mg__name {
+    font-size: 1.5rem;
+  }
+
+  .mg__stage {
+    padding: 0.75rem;
+  }
+
+  .mg__meter {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+  }
+}
+
+/* Печать: показываем все народы подряд, переключатель убираем. -------------- */
+
+@media print {
+  .mg__tabs {
+    display: none;
+  }
+
+  .mg__panel,
+  body:has(.mg__panel:target) .mg__panel--first:not(:target) {
+    display: block;
+  }
+}
+
+/* Меньше движения для тех, кому так удобнее. ------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mg *,
+  .mg *::before,
+  .mg *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

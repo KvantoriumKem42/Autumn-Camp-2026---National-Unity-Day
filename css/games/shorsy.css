@@ -1,0 +1,130 @@
+/* ==========================================================================
+   games/shorsy.css — игра «Перетяни палку» (шорцы).
+   Все правила с префиксом .mg-sh, файл можно удалить целиком.
+   ========================================================================== */
+
+.mg-sh {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mg-sh__field {
+  --sh-pos: 0;
+  position: relative;
+  height: 170px;
+  border: 1px solid #d9d2cb;
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, rgba(140, 59, 46, 0.14) 0 16%, rgba(140, 59, 46, 0.04) 16% 50%,
+      rgba(31, 27, 24, 0.03) 50% 84%, rgba(31, 27, 24, 0.13) 84% 100%),
+    #efe6da;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.mg-sh__field--pull {
+  box-shadow: inset 0 0 0 3px rgba(140, 59, 46, 0.35);
+}
+
+.mg-sh__field--blocked {
+  box-shadow: inset 0 0 0 3px rgba(179, 71, 47, 0.65);
+}
+
+/* Контрольные линии: за них палку не отдают. */
+.mg-sh__line {
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  width: 0;
+  border-left: 2px dashed rgba(107, 98, 91, 0.55);
+}
+
+.mg-sh__line--left {
+  left: 16%;
+}
+
+.mg-sh__line--right {
+  left: 84%;
+}
+
+/* Доска, поставленная на ребро, — по центру поля. */
+.mg-sh__board {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 10px;
+  height: 50%;
+  margin-left: -5px;
+  border-radius: 3px 3px 0 0;
+  background: #8a5a35;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* Палка, которую тянут обе стороны. */
+.mg-sh__stick {
+  position: absolute;
+  top: 46%;
+  left: calc(50% + var(--sh-pos) * 1%);
+  width: 9rem;
+  height: 0.95rem;
+  margin: -0.475rem 0 0 -4.5rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c08a52, #8a5a35);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.24);
+  transition: left 0.06s linear;
+  z-index: 3;
+}
+
+.mg-sh__grip {
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.75rem;
+  border: 2px solid #6f461f;
+  border-radius: 50%;
+  background: #d9a05b;
+}
+
+.mg-sh__grip--left {
+  left: 0.6rem;
+}
+
+.mg-sh__grip--right {
+  right: 0.6rem;
+}
+
+.mg-sh__side {
+  position: absolute;
+  bottom: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #6b625b;
+}
+
+.mg-sh__side--you {
+  left: 0.8rem;
+  color: #8c3b2e;
+}
+
+.mg-sh__side--rival {
+  right: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .mg-sh__field {
+    height: 150px;
+  }
+
+  .mg-sh__stick {
+    width: 7rem;
+    margin-left: -3.5rem;
+  }
+
+  .mg-sh__grip {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: -0.575rem;
+  }
+}
