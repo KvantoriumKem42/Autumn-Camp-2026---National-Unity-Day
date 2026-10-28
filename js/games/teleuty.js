@@ -11,6 +11,8 @@
 
   var sky = root.querySelector('[data-sky]');
   var arrow = root.querySelector('[data-arrow]');
+  var bow = root.querySelector('[data-bow]');
+  var targetEl = root.querySelector('[data-target]');
   var windEl = root.querySelector('[data-wind]');
   var powerInput = root.querySelector('[data-power]');
   var angleInput = root.querySelector('[data-angle]');
@@ -21,15 +23,19 @@
   var statusEl = root.querySelector('[data-status]');
   var logEl = root.querySelector('[data-log]');
 
-  var FIELD = 10;      /* ширина поля в метрах */
-  var TARGET = 7.5;    /* расстояние до центра мишени */
-  var MAX_SHOTS = 3;
+  var FIELD = 10;          /* ширина поля в метрах */
+  var TARGET = 7.5;        /* расстояние до плоскости мишени */
+  var LAUNCH_X = 0.5;      /* где стоит лук */
+  var G = 9.8;
+  var FACE_R = 1.1;        /* радиус мишени в метрах */
   var WIND_LIMIT = 2.5;
+  var WIND_DRIFT = 0.13;   /* снос в метрах за секунду при ветре 1 м/с */
+  var MAX_SHOTS = 3;
   var RINGS = [
-    { radius: 0.16, points: 10 },
-    { radius: 0.36, points: 9 },
-    { radius: 0.62, points: 7 },
-    { radius: 0.95, points: 5 }
+    { share: 0.16, points: 10 },
+    { share: 0.36, points: 9 },
+    { share: 0.62, points: 7 },
+    { share: 0.92, points: 5 }
   ];
 
   var state = { shots: [], wind: 0, busy: false };
@@ -40,7 +46,7 @@
 
   function windText(wind) {
     if (Math.abs(wind) < 0.2) return 'Ветер: стих';
-    return 'Ветер: ' + (wind > 0 ? 'попутный ' : 'встречный ') + num(Math.abs(wind)) + ' м/с';
+    return 'Ветер: ' + (wind > 0 ? 'вправо ' : 'влево ') + num(Math.abs(wind)) + ' м/с';
   }
 
   function setStatus(text, kind) {
@@ -54,26 +60,46 @@
     windEl.textContent = windText(state.wind);
   }
 
-  function rangeFor(power, angle) {
-    var speed = power * 0.11;
-    var rad = angle * Math.PI / 180;
-    var range = speed * speed * Math.sin(2 * rad) / 9.8 + state.wind * 0.25;
-    return Math.max(0.4, range);
+  function updateBow() {
+    bow.style.setProperty('--arch-angle', angleInput.value);
   }
 
-  function pointsFor(range) {
-    var offset = Math.abs(range - TARGET);
+  /* Полёт стрелы: где она окажется на плоскости мишени и куда упадёт. */
+  function trajectory(power, angle) {
+    var speed = power * 0.11;
+    var rad = angle * Math.PI / 180;
+    var vx = speed * Math.cos(rad);
+    var vy = speed * Math.sin(rad);
+    var distance = TARGET - LAUNCH_X;
+    var flight = distance / vx;
+    var height = vy * flight - 0.5 * G * flight * flight;
+    var groundFlight = 2 * vy / G;
+    var groundX = LAUNCH_X + vx * groundFlight;
+    var range = speed * speed * Math.sin(2 * rad) / G;
+    var drift = state.wind * flight * WIND_DRIFT;
+    var apex = vy * vy / (2 * G);
+
+    return {
+      height: height,
+      drift: drift,
+      groundX: groundX,
+      range: range,
+      apex: apex
+    };
+  }
+
+  function pointsFor(distancePx, faceRpx) {
     for (var i = 0; i < RINGS.length; i += 1) {
-      if (offset <= RINGS[i].radius) return RINGS[i].points;
+      if (distancePx <= RINGS[i].share * faceRpx) return RINGS[i].points;
     }
     return 0;
   }
 
-  function addMark(x, points) {
+  function addMark(x, y, points) {
     var mark = document.createElement('span');
     mark.className = 'mg-arch__mark';
     mark.style.left = x + 'px';
-    mark.style.bottom = '38%';
+    mark.style.top = y + 'px';
     mark.textContent = points > 0 ? String(points) : '×';
     sky.appendChild(mark);
   }
@@ -108,10 +134,9 @@
     setStatus('Все три подхода позади: ' + total + ' из 30 очков. ' + verdict, total >= 15 ? 'win' : 'lose');
   }
 
-  function land(range, x) {
-    var points = pointsFor(range);
-    addMark(x, points);
-    state.shots.push({ range: range, points: points });
+  function land(points, range, x, y) {
+    addMark(x, y, points);
+    state.shots.push({ points: points, range: range });
     addLog(state.shots.length, range, points);
 
     if (state.shots.length >= MAX_SHOTS) {
@@ -122,7 +147,7 @@
 
     state.busy = false;
     newWind();
-    setStatus('Выстрелов осталось: ' + (MAX_SHOTS - state.shots.length) + '. Подстрой прицел и стреляй снова.');
+    setStatus('Выстрелов осталось: ' + (MAX_SHOTS - state.shots.length) + '. Подстрой силу и угол.');
     lockControls(false);
     arrow.style.opacity = '0';
   }
@@ -135,15 +160,35 @@
 
     var power = Number(powerInput.value);
     var angle = Number(angleInput.value);
-    var range = rangeFor(power, angle);
+    var path = trajectory(power, angle);
 
-    var width = sky.clientWidth;
-    var height = sky.clientHeight;
+    var skyRect = sky.getBoundingClientRect();
+    var targetRect = targetEl.getBoundingClientRect();
+    var width = skyRect.width;
+    var height = skyRect.height;
+    var faceRpx = targetRect.width / 2;
+    var pxPerMeter = faceRpx / FACE_R;
+    var centreX = targetRect.left - skyRect.left + targetRect.width / 2;
+    var centreY = targetRect.top - skyRect.top + targetRect.height / 2;
+    var groundY = height * 0.62;
+
+    /* Положение стрелы на мишени: вбок сносит ветер, вверх-вниз — траектория. */
+    var offsetX = path.drift * pxPerMeter;
+    var offsetY = (path.height - FACE_R) * pxPerMeter;
+    var shift = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+    var points = pointsFor(shift, faceRpx);
+
+    var hitX = centreX + offsetX;
+    var hitY = centreY - offsetY;
+    var endX = points > 0 ? hitX : Math.max(6, Math.min(width - 6, width * path.groundX / FIELD));
+    var endY = points > 0 ? hitY : groundY;
+
     var startX = width * 0.05;
-    var endX = Math.max(width * 0.02, Math.min(width * 0.99, width * range / FIELD));
-    var dx = Math.max(10, endX - startX - 34); /* 34 px — длина стрелы: к точке приходит остриё */
-    var peak = Math.max(12, Math.min(height * 0.55, Math.abs(dx) * Math.tan(angle * Math.PI / 180) * 0.35));
-    var duration = 620 + Math.min(600, Math.abs(dx) * 0.5);
+    var startY = groundY;
+    var dx = Math.max(8, endX - startX - 32); /* 32 px — длина стрелы: к точке приходит остриё */
+    var dy = endY - startY;
+    var peak = Math.max(14, Math.min(height * 0.55, path.apex * pxPerMeter * 0.8 + Math.abs(dy) * 0.12));
+    var duration = 620 + Math.min(520, Math.abs(dx) * 0.6);
 
     arrow.style.opacity = '1';
     arrow.style.transform = 'translate(0px, 0px) rotate(0deg)';
@@ -154,8 +199,8 @@
       if (!startedAt) startedAt = now;
       var p = Math.min(1, (now - startedAt) / duration);
       var x = dx * p;
-      var y = -4 * peak * p * (1 - p);
-      var slope = -4 * peak * (1 - 2 * p);
+      var y = dy * p - 4 * peak * p * (1 - p);
+      var slope = dy - 4 * peak * (1 - 2 * p);
       var deg = Math.atan2(slope, dx) * 180 / Math.PI;
 
       arrow.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(' + deg + 'deg)';
@@ -163,7 +208,7 @@
       if (p < 1) {
         requestAnimationFrame(flight);
       } else {
-        land(range, endX);
+        land(points, path.range, endX, endY);
       }
     }
 
@@ -186,11 +231,12 @@
     angleInput.value = '30';
     powerOut.textContent = '60';
     angleOut.textContent = '30°';
+    updateBow();
 
     lockControls(false);
     resetBtn.hidden = true;
     newWind();
-    setStatus('Выстрелов осталось: 3.');
+    setStatus('Выстрелов осталось: 3. В центре мишени — 10 очков.');
   }
 
   powerInput.addEventListener('input', function () {
@@ -199,6 +245,7 @@
 
   angleInput.addEventListener('input', function () {
     angleOut.textContent = angleInput.value + '°';
+    updateBow();
   });
 
   shootBtn.addEventListener('click', shoot);

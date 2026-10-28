@@ -20,11 +20,11 @@
   var resetBtn = root.querySelector('[data-reset]');
 
   var LENGTH = 12;      /* вёрсты */
-  var MAX_SPEED = 1.9;
+  var MAX_SPEED = 1.6;
   var RIVALS = [
     { base: 0.78, phase: 0.4 },
     { base: 0.84, phase: 2.1 },
-    { base: 0.70, phase: 4.0 }
+    { base: 0.72, phase: 4.0 }
   ];
   var state = null;
   var rafId = 0;
@@ -45,6 +45,11 @@
 
   function num(value) {
     return value.toFixed(1).replace('.', ',');
+  }
+
+  /* Загнанная лошадь не может держать полный ход. */
+  function speedCap() {
+    return MAX_SPEED * (0.55 + 0.45 * state.stamina / 100);
   }
 
   function setStatus(text, kind) {
@@ -98,15 +103,18 @@
   function step(dt) {
     state.time += dt;
 
-    /* Выносливость восстанавливается, если не частить с тапами. */
-    if (state.time - state.lastTap > 0.22) {
-      state.stamina = Math.min(100, state.stamina + 18 * dt);
+    /* Выносливость восстанавливается, только если дать лошади передохнуть. */
+    if (state.time - state.lastTap > 0.3) {
+      state.stamina = Math.min(100, state.stamina + 14 * dt);
     }
 
     state.speed *= Math.exp(-1.9 * dt);
     if (state.stamina <= 0) {
       state.speed *= Math.exp(-1.2 * dt);
     }
+
+    var cap = speedCap();
+    if (state.speed > cap) state.speed = cap;
     if (state.speed < 0.02) state.speed = 0;
 
     state.positions[0] += state.speed * dt;
@@ -164,10 +172,10 @@
     if (!state || !state.running) return;
 
     var tired = state.stamina <= 0;
-    var impulse = tired ? 0.14 : 0.55;
+    var impulse = tired ? 0.07 : 0.55;
 
-    state.speed = Math.min(MAX_SPEED, state.speed + impulse);
-    state.stamina = Math.max(0, state.stamina - (tired ? 0.6 : 2.4));
+    state.speed = Math.min(speedCap(), state.speed + impulse);
+    state.stamina = Math.max(0, state.stamina - (tired ? 0.8 : 3.0));
     state.lastTap = state.time;
     render();
   }
@@ -178,7 +186,7 @@
     startBtn.disabled = true;
     tapBtn.disabled = false;
     resetBtn.hidden = true;
-    setStatus('Заезд начался! Скачи в ритме и не загоняй лошадь.');
+    setStatus('Заезд начался! Скачи рывками: серия тапов — потом отдых.');
     render();
     startLoop();
     tapBtn.focus({ preventScroll: true });
@@ -204,11 +212,11 @@
     startBtn.disabled = false;
     tapBtn.disabled = true;
     resetBtn.hidden = true;
-    setStatus('Нажми «Начать заезд», а потом скачи в ритме.');
+    setStatus('Нажми «Начать заезд», а потом скачи рывками.');
     render();
   });
 
   state = createState();
   render();
-  setStatus('Нажми «Начать заезд», а потом скачи в ритме.');
+  setStatus('Нажми «Начать заезд», а потом скачи рывками.');
 })();

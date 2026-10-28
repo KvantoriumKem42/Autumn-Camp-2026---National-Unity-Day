@@ -96,7 +96,7 @@
         state.blocked = 1.2;
         state.holding = false;
         holding = false;
-        setStatus('Перегрев! Руки устали — переведи дух и снова тяни.');
+        setStatus('Усталость! Руки ослабли — переведи дух и снова тяни.');
       }
     } else {
       state.power = Math.max(0, state.power - dt * 2.5);
@@ -114,7 +114,7 @@
     if (!burst) state.burstNoticed = false;
 
     var rival = 0.44 + 0.07 * Math.sin(state.time * 1.3) + 0.05 * Math.sin(state.time * 3.1) + (burst ? 0.45 : 0);
-    var net = holding ? state.power * (1 - 0.45 * state.heat) - rival : -0.12;
+    var net = holding ? state.power * (1 - 0.45 * state.heat) - rival : -0.08;
 
     state.pos += net * 0.75 * dt;
     state.pos = Math.max(-1.15, Math.min(1.15, state.pos));

@@ -176,7 +176,7 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
   transition: width 0.08s linear;
 }
 
-.mg__bar--heat > i {
+.mg__bar--tired > i {
   background: linear-gradient(90deg, #d9a05b, #b3472f);
 }
 

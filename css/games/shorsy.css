@@ -64,7 +64,7 @@
 .mg-sh__stick {
   position: absolute;
   top: 46%;
-  left: calc(50% + var(--sh-pos) * 1%);
+  left: calc(50% - var(--sh-pos) * 1%);
   width: 9rem;
   height: 0.95rem;
   margin: -0.475rem 0 0 -4.5rem;
