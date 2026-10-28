@@ -1,0 +1,198 @@
+/* ==========================================================================
+   games/teleuty.css — игра «Стрельба из лука» (телеуты).
+   Все правила с префиксом .mg-arch, файл можно удалить целиком.
+   ========================================================================== */
+
+.mg-arch {
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* Поле: небо, земля, мишень, лук и стрела. */
+.mg-arch__sky {
+  position: relative;
+  height: 210px;
+  border: 1px solid #d9d2cb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #dde9ef 0 62%, #e9dfcd 62% 100%);
+}
+
+.mg-arch__wind,
+.mg-arch__distance {
+  position: absolute;
+  top: 0.55rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
+  color: #6b625b;
+}
+
+.mg-arch__wind {
+  left: 0.6rem;
+}
+
+.mg-arch__distance {
+  right: 0.6rem;
+}
+
+/* Мишень стоит на линии земли в 7,5 м от стрелка. */
+.mg-arch__target {
+  position: absolute;
+  left: 75%;
+  bottom: 38%;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%,
+    #8c3b2e 0 15%,
+    #f6f1ec 15% 31%,
+    #8c3b2e 31% 49%,
+    #f6f1ec 49% 67%,
+    #b9c9b4 67% 84%,
+    #6b625b 84% 100%);
+  box-shadow: 0 5px 0 rgba(31, 27, 24, 0.18);
+}
+
+.mg-arch__target::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 6px;
+  height: 14px;
+  margin-left: -3px;
+  border-radius: 0 0 2px 2px;
+  background: #8a5a35;
+}
+
+.mg-arch__bow {
+  position: absolute;
+  left: 4%;
+  bottom: 38%;
+  width: 26px;
+  height: 58px;
+  border-right: 3px solid #8a5a35;
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  transform-origin: 50% 96%;
+  transform: rotate(calc(var(--arch-angle, 0) * -1deg));
+  transition: transform 0.18s ease;
+}
+
+.mg-arch__bow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 1px;
+  background: rgba(31, 27, 24, 0.45);
+}
+
+.mg-arch__arrow {
+  position: absolute;
+  left: 5%;
+  bottom: 38%;
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: #5a3a22;
+  transform-origin: 0 50%;
+  opacity: 0;
+  will-change: transform;
+  z-index: 4;
+}
+
+.mg-arch__arrow::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  width: 10px;
+  height: 11px;
+  background: #b3472f;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Отметки попаданий. */
+.mg-arch__mark {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #1f1b18;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #1f1b18;
+  z-index: 5;
+}
+
+/* Ползунки силы и угла. */
+.mg-arch__controls {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.mg-arch__control {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) 3rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #6b625b;
+}
+
+.mg-arch__control input[type="range"] {
+  width: 100%;
+  accent-color: #8c3b2e;
+}
+
+.mg-arch__control output {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #1f1b18;
+}
+
+/* Протокол выстрелов. */
+.mg-arch__log {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  color: #6b625b;
+}
+
+.mg-arch__log:empty {
+  display: none;
+}
+
+.mg-arch__log li {
+  padding: 0.3rem 0.55rem;
+  border-left: 3px solid #d9d2cb;
+  background: #ffffff;
+  border-radius: 0 8px 8px 0;
+}
+
+.mg-arch__log b {
+  color: #8c3b2e;
+}
+
+@media (max-width: 600px) {
+  .mg-arch__sky {
+    height: 190px;
+  }
+
+  .mg-arch__target {
+    width: 84px;
+    height: 84px;
+  }
+}

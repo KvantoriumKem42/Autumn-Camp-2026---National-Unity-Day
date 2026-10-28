@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Народные игры — Народы России</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/games.css">
+  <link rel="stylesheet" href="css/games/shorsy.css">
+  <link rel="stylesheet" href="css/games/teleuty.css">
+  <link rel="stylesheet" href="css/games/kalmaki.css">
+  <link rel="stylesheet" href="css/games/sibirskie-tatary.css">
+  <link rel="stylesheet" href="css/games/russkie.css">
 </head>
 <body>
   <header class="site-header">
@@ -22,16 +28,279 @@
 
   <main class="site-main">
     <h1 class="page-title">Народные игры</h1>
-    <p class="page-intro">Игры и забавы народов Кузбасса.</p>
+    <p class="page-intro">Пять народов Кузбасса — пять игр. Выберите народ и сыграйте в его традиционную забаву.</p>
 
-    <section class="page-section">
-      <h2 class="section-title">Игры народов Кузбасса</h2>
-      <p>Материал готовится.</p>
+    <section class="mg" aria-labelledby="mg-heading">
+      <h2 class="section-title" id="mg-heading">Игры народов Кузбасса</h2>
+
+      <nav class="mg__tabs" aria-label="Выбор народа">
+        <a class="mg__tab" href="#shortsy">Шорцы</a>
+        <a class="mg__tab" href="#teleuty">Телеуты</a>
+        <a class="mg__tab" href="#kalmaki">Калмаки</a>
+        <a class="mg__tab" href="#sibirskie-tatary">Сибирские татары</a>
+        <a class="mg__tab" href="#russkie">Русские</a>
+      </nav>
+
+      <div class="mg__panels">
+        <article class="mg__panel mg__panel--first" id="shortsy">
+          <header class="mg__head">
+            <h3 class="mg__name">Шорцы</h3>
+            <p class="mg__game">Перетяни палку</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>Для состязания нужны доска и палка длиной не меньше метра — гладкая и круглая. Доску ставят на ребро. Двое садятся друг напротив друга, сгибают ноги в коленях и упираются стопами в доску. Обеими руками они обхватывают палку, которая в исходном положении висит ровно над ребром доски. Тянуть можно только по команде судьи. Побеждает тот, кто перетянет палку на свою сторону.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Держи кнопку «Держи и тяни» или пробел: палка поедет к тебе. Чем дольше держишь, тем сильнее тяга, но растёт усталость. Отпускай, пока шкала не дошла до края, — иначе руки ослабнут. Соперник время от времени тянет сильнее: следи за его шкалой.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-sh" data-game="shorsy">
+                <div class="mg-sh__field" data-field aria-hidden="true">
+                  <span class="mg-sh__line mg-sh__line--left"></span>
+                  <span class="mg-sh__line mg-sh__line--right"></span>
+                  <span class="mg-sh__board"></span>
+                  <div class="mg-sh__stick" data-stick>
+                    <span class="mg-sh__grip mg-sh__grip--left"></span>
+                    <span class="mg-sh__grip mg-sh__grip--right"></span>
+                  </div>
+                  <span class="mg-sh__side mg-sh__side--you">Ты</span>
+                  <span class="mg-sh__side mg-sh__side--rival">Соперник</span>
+                </div>
+
+                <div class="mg__meters">
+                  <div class="mg__meter"><span>Сила</span><div class="mg__bar"><i data-power></i></div></div>
+                  <div class="mg__meter"><span>Усталость</span><div class="mg__bar mg__bar--tired"><i data-heat></i></div></div>
+                  <div class="mg__meter"><span>Соперник</span><div class="mg__bar mg__bar--rival"><i data-rival></i></div></div>
+                </div>
+
+                <p class="mg__status" data-status role="status">Держи кнопку и перетяни палку на свою сторону.</p>
+
+                <div class="mg__actions">
+                  <button class="mg__btn" type="button" data-pull>Держи и тяни</button>
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mg__panel" id="teleuty">
+          <header class="mg__head">
+            <h3 class="mg__name">Телеуты</h3>
+            <p class="mg__game">Стрельба из лука</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>В стрельбе из лука участник показывает умение обращаться с древнейшим оружием охоты. Даже на современных праздниках для этих состязаний предпочитают самодельные деревянные луки, а не спортивные. Каждому участнику даётся три подхода. При определении результатов учитывают не только меткость, но и дальность стрельбы.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Двигай ползунки силы и угла: сила задаёт дальность, угол наклоняет лук. Ветер сносит стрелу вбок. Жми «Выстрел». Мишень стоит в 7,5 метра, очки считают по тому, куда попала стрела: в центр — 10, дальше от центра — 9, 7 или 5. Три подхода.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-arch" data-game="teleuty">
+                <div class="mg-arch__sky" data-sky>
+                  <span class="mg-arch__wind" data-wind>Ветер: стих</span>
+                  <span class="mg-arch__distance">Цель: 7,5 м</span>
+                  <div class="mg-arch__target" data-target></div>
+                  <div class="mg-arch__bow" data-bow aria-hidden="true"></div>
+                  <div class="mg-arch__arrow" data-arrow aria-hidden="true"></div>
+                </div>
+
+                <div class="mg-arch__controls">
+                  <label class="mg-arch__control">
+                    <span>Сила</span>
+                    <input type="range" min="20" max="100" step="1" value="60" data-power>
+                    <output data-power-out>60</output>
+                  </label>
+                  <label class="mg-arch__control">
+                    <span>Угол</span>
+                    <input type="range" min="5" max="55" step="1" value="30" data-angle>
+                    <output data-angle-out>30°</output>
+                  </label>
+                </div>
+
+                <div class="mg__actions">
+                  <button class="mg__btn" type="button" data-shoot>Выстрел</button>
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
+
+                <p class="mg__status" data-status role="status">Выстрелов осталось: 3.</p>
+                <ol class="mg-arch__log" data-log aria-label="Результаты выстрелов"></ol>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mg__panel" id="kalmaki">
+          <header class="mg__head">
+            <h3 class="mg__name">Калмаки</h3>
+            <p class="mg__game">Конные скачки</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>Конные скачки — скоростные заезды на длинные дистанции, от 10 до 25 вёрст. В них проверяют выносливость лошадей и мастерство юных наездников.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Жми «Скакать!» или пробел сериями: несколько быстрых тапов дают разгон, но тратят выносливость. Затем дай лошади отдышаться — и снова в галоп. Если гнать без отдыха, она выбьется из сил и потеряет ход. Дистанция — 12 вёрст, соперников трое.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-race" data-game="kalmaki">
+                <div class="mg-race__info">
+                  <span>Дистанция: <b data-distance>0,0 / 12</b> вёрст</span>
+                  <span>Время: <b data-time>0,0</b> с</span>
+                </div>
+
+                <div class="mg-race__track">
+                  <div class="mg-race__lanes">
+                    <div class="mg-race__lane mg-race__lane--player"><span class="mg-race__horse" data-horse="0">🐎</span></div>
+                    <div class="mg-race__lane"><span class="mg-race__horse" data-horse="1">🐎</span></div>
+                    <div class="mg-race__lane"><span class="mg-race__horse" data-horse="2">🐎</span></div>
+                    <div class="mg-race__lane"><span class="mg-race__horse" data-horse="3">🐎</span></div>
+                    <span class="mg-race__finish" aria-hidden="true"></span>
+                  </div>
+                  <div class="mg-race__names" aria-hidden="true">
+                    <span>Ты</span>
+                    <span>Буран</span>
+                    <span>Сокол</span>
+                    <span>Тулпар</span>
+                  </div>
+                </div>
+
+                <div class="mg__meters">
+                  <div class="mg__meter"><span>Скорость</span><div class="mg__bar"><i data-speed></i></div></div>
+                  <div class="mg__meter"><span>Выносливость</span><div class="mg__bar mg__bar--stamina"><i data-stamina></i></div></div>
+                </div>
+
+                <p class="mg__status" data-status role="status">Нажми «Начать заезд», а потом скачи рывками.</p>
+
+                <div class="mg__actions">
+                  <button class="mg__btn" type="button" data-start>Начать заезд</button>
+                  <button class="mg__btn" type="button" data-tap disabled>Скакать!</button>
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mg__panel" id="sibirskie-tatary">
+          <header class="mg__head">
+            <h3 class="mg__name">Сибирские татары</h3>
+            <p class="mg__game">Куышу уены (догонялки)</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>Куышу уены — традиционные подвижные догонялки, которые особенно любили дети. Водящий старается догнать игрока, а тот убегает и петляет по поляне.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Нажми «Начать погоню» и уходи от водящего стрелками или WASD. На телефоне — кнопки на экране. Чем дольше держишься, тем лучше результат.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-tag" data-game="sibirskie-tatary">
+                <div class="mg-tag__legend">
+                  <span><i class="mg-tag__dot mg-tag__dot--player"></i>Ты</span>
+                  <span><i class="mg-tag__dot mg-tag__dot--chaser"></i>Водящий</span>
+                  <span>Поймали: <b data-caught>0</b></span>
+                  <span>Лучший результат: <b data-best>—</b></span>
+                </div>
+
+                <div class="mg-tag__field" data-field tabindex="0" role="application" aria-label="Поле для догонялок. Управление стрелками или WASD">
+                  <span class="mg-tag__token mg-tag__token--chaser" data-chaser></span>
+                  <span class="mg-tag__token mg-tag__token--player" data-player></span>
+                </div>
+
+                <p class="mg__status" data-status role="status">Нажми «Начать погоню» и уходи от водящего.</p>
+
+                <div class="mg-tag__controls">
+                  <div class="mg-tag__pad">
+                    <button class="mg-tag__key mg-tag__key--up" type="button" data-dir="up" aria-label="Вверх">↑</button>
+                    <button class="mg-tag__key mg-tag__key--left" type="button" data-dir="left" aria-label="Влево">←</button>
+                    <button class="mg-tag__key mg-tag__key--down" type="button" data-dir="down" aria-label="Вниз">↓</button>
+                    <button class="mg-tag__key mg-tag__key--right" type="button" data-dir="right" aria-label="Вправо">→</button>
+                  </div>
+                  <button class="mg__btn" type="button" data-start>Начать погоню</button>
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mg__panel" id="russkie">
+          <header class="mg__head">
+            <h3 class="mg__name">Русские</h3>
+            <p class="mg__game">Городки</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>Городки — старинная игра, в которой с определённого расстояния выбивают деревянные фигуры, «городки», специальной битой. Фигуру складывают из шести дощечек.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Кликни левой кнопкой по фигуре, когда шкала силы окажется в зелёной зоне. Чем ближе прицел к центру фигуры, тем больше дощечек упадёт. Пять бит и пять разных расстановок: сбей все шесть дощечек.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-gor" data-game="russkie">
+                <div class="mg-gor__info">
+                  <span>Биты: <b data-bats>5</b></span>
+                  <span>Фигура: <b data-figure-name>—</b></span>
+                  <span>Сбито дощечек: <b data-score>0</b> из 6</span>
+                </div>
+
+                <div class="mg-gor__field" data-field tabindex="0" aria-label="Поле для городков. Кликни по фигуре, чтобы бросить биту">
+                  <span class="mg-gor__aim" data-aim aria-hidden="true"></span>
+                  <div class="mg-gor__figure" data-figure aria-hidden="true">
+                    <span class="mg-gor__block"></span>
+                    <span class="mg-gor__block"></span>
+                    <span class="mg-gor__block"></span>
+                    <span class="mg-gor__block"></span>
+                    <span class="mg-gor__block"></span>
+                    <span class="mg-gor__block"></span>
+                  </div>
+                  <span class="mg-gor__bat" data-bat aria-hidden="true"></span>
+                </div>
+
+                <div class="mg-gor__charge" aria-hidden="true">
+                  <span class="mg-gor__charge-zone"></span>
+                  <span class="mg-gor__charge-fill" data-charge></span>
+                </div>
+
+                <p class="mg__status" data-status role="status">Кликни по фигуре, когда шкала силы окажется в зелёной зоне.</p>
+
+                <div class="mg__actions">
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© 2026. Проект «Народы России».</p>
   </footer>
+
+  <script src="js/games/shorsy.js"></script>
+  <script src="js/games/teleuty.js"></script>
+  <script src="js/games/kalmaki.js"></script>
+  <script src="js/games/sibirskie-tatary.js"></script>
+  <script src="js/games/russkie.js"></script>
 </body>
 </html>

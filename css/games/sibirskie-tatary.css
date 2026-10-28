@@ -1,0 +1,163 @@
+/* ==========================================================================
+   games/sibirskie-tatary.css — игра «Куышу уены» (сибирские татары).
+   Все правила с префиксом .mg-tag, файл можно удалить целиком.
+   ========================================================================== */
+
+.mg-tag {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mg-tag__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.82rem;
+  color: #6b625b;
+}
+
+.mg-tag__legend span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mg-tag__legend b {
+  margin-left: 0.25rem;
+  color: #1f1b18;
+  font-variant-numeric: tabular-nums;
+}
+
+.mg-tag__dot {
+  display: inline-block;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+}
+
+.mg-tag__dot--player {
+  background: #8c3b2e;
+}
+
+.mg-tag__dot--chaser {
+  background: #1f1b18;
+  box-shadow: inset 0 0 0 2px #d9a05b;
+}
+
+/* Поляна: сетка 9 × 7. */
+.mg-tag__field {
+  position: relative;
+  aspect-ratio: 9 / 7;
+  border: 1px solid #d9d2cb;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #e6ddcd;
+  background-image:
+    linear-gradient(to right, rgba(107, 98, 91, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(107, 98, 91, 0.16) 1px, transparent 1px);
+  background-size: calc(100% / 9) calc(100% / 7);
+  outline: none;
+  touch-action: manipulation;
+}
+
+.mg-tag__field:focus-visible {
+  box-shadow: 0 0 0 3px rgba(140, 59, 46, 0.4);
+}
+
+.mg-tag__token {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: calc(100% / 9);
+  height: calc(100% / 7);
+  transition: left 0.1s linear, top 0.1s linear;
+  z-index: 2;
+}
+
+.mg-tag__token::before {
+  content: "";
+  width: 64%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #8c3b2e;
+  box-shadow: 0 2px 4px rgba(31, 27, 24, 0.28);
+}
+
+.mg-tag__token--player {
+  z-index: 3;
+}
+
+.mg-tag__token--chaser::before {
+  background: #1f1b18;
+  box-shadow: inset 0 0 0 3px #d9a05b, 0 2px 4px rgba(31, 27, 24, 0.28);
+}
+
+.mg-tag__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.mg-tag__pad {
+  display: grid;
+  grid-template-columns: repeat(3, 2.6rem);
+  grid-template-rows: repeat(3, 2.6rem);
+  gap: 0.25rem;
+}
+
+.mg-tag__key {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #d9d2cb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f1b18;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.mg-tag__key:hover {
+  border-color: #8c3b2e;
+}
+
+.mg-tag__key:focus-visible {
+  outline: 2px solid #8c3b2e;
+  outline-offset: 1px;
+}
+
+.mg-tag__key:active {
+  background: #f3e4dd;
+}
+
+.mg-tag__key--up {
+  grid-area: 1 / 2;
+}
+
+.mg-tag__key--left {
+  grid-area: 2 / 1;
+}
+
+.mg-tag__key--down {
+  grid-area: 3 / 2;
+}
+
+.mg-tag__key--right {
+  grid-area: 2 / 3;
+}
+
+@media (max-width: 600px) {
+  .mg-tag__controls {
+    gap: 0.6rem;
+  }
+
+  .mg-tag__pad {
+    grid-template-columns: repeat(3, 2.3rem);
+    grid-template-rows: repeat(3, 2.3rem);
+  }
+}
