@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Пять традиционных блюд народов Кузбасса: чак-чак, тутмаш, бёрики, иӱрге и пельмени. Пошаговые рецепты, чек-лист продуктов и сохранение прогресса.">
   <title>Кухня народов — Народы России</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cuisine.css">
 </head>
-<body>
+<body class="cuisine-page">
   <header class="site-header">
     <a class="site-logo" href="index.html">Народы России</a>
     <nav class="site-nav" aria-label="Основная навигация">
@@ -22,17 +24,41 @@
 
   <main class="site-main">
     <h1 class="page-title">Кухня народов</h1>
-    <p class="page-intro">Традиционные блюда народов Кузбасса.</p>
+    <div class="page-intro">
+      <p>У каждого народа есть свои неповторимые блюда. Они рождаются из того, что даёт родная земля, и хранят память о праздниках, обычаях и повседневном труде. В кухне народов Кузбасса соединились мясные бульоны и тесто, крупы и мёд, травы и специи: у сибирских татар — праздничный чак-чак, у телеутов — сытный тутмаш, у калмаков — крупные бёрики, у шорцев — густой иӱрге, у русских — домашние пельмени.</p>
+      <p>Каждое блюдо — маленькая история о гостеприимстве, щедрости и бережном отношении к продуктам. Открывайте рецепты, отмечайте продукты и шаги, ставьте свою оценку — и знакомьтесь с культурой народов Кузбасса не только по книгам, но и на вкус.</p>
+    </div>
 
-    <section class="page-section">
-      <h2 class="section-title">Блюда народов Кузбасса</h2>
-      <p>Здесь появятся описания традиционных блюд и рецепты.</p>
-      <p>Материал готовится.</p>
+    <section class="cuisine" aria-labelledby="dishes-title">
+      <div class="cuisine__heading">
+        <div class="cuisine__heading-text">
+          <h2 class="section-title" id="dishes-title">Блюда народов Кузбасса</h2>
+          <p class="section-intro">Оценка, чек-лист и прогресс сохраняются в этой сессии браузера. Время приготовления и граммовки примерные: они зависят от продуктов, посуды и размера порций.</p>
+        </div>
+        <label class="dish-sort">
+          <span class="dish-sort__label">Сортировка</span>
+          <span class="dish-sort__field">
+            <select class="dish-sort__select" id="dish-sort">
+              <option value="default">По порядку</option>
+              <option value="rating">По оценке</option>
+            </select>
+          </span>
+        </label>
+      </div>
+
+      <div class="dishes__grid" id="dish-grid"></div>
+
+      <noscript>
+        <p class="cuisine-noscript">Для интерактивных карточек нужен JavaScript. Включите его, чтобы открывать рецепты и сохранять прогресс.</p>
+      </noscript>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© 2026. Проект «Народы России».</p>
   </footer>
+
+  <script src="js/cuisine-data.js" defer></script>
+  <script src="js/cuisine.js" defer></script>
 </body>
 </html>
