@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Кукла в платке</title>
+  <rect width="400" height="300" rx="18" fill="#eaf1ef"/>
+  <ellipse cx="200" cy="258" rx="62" ry="9" fill="#263a38" opacity=".08"/>
+  <path d="M165 132 L235 132 L256 240 L144 240 Z" fill="#a8402f" stroke="#263a38" stroke-width="3"/>
+  <path d="M168 140 L146 196" stroke="#a8402f" stroke-width="16" stroke-linecap="round"/>
+  <path d="M232 140 L254 196" stroke="#a8402f" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="200" cy="96" r="31" fill="#f8f2e4" stroke="#263a38" stroke-width="3"/>
+  <path d="M168 96 Q200 52 232 96 L238 122 Q200 106 162 122 Z" fill="#2f6f6a" stroke="#263a38" stroke-width="2.5"/>
+  <path d="M232 100 L252 150 L236 150 Z" fill="#2f6f6a" stroke="#263a38" stroke-width="2"/>
+  <circle cx="190" cy="96" r="2.4" fill="#263a38"/>
+  <circle cx="210" cy="96" r="2.4" fill="#263a38"/>
+  <path d="M194 108 Q200 113 206 108" stroke="#a8402f" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M172 158 L228 158 L238 228 L162 228 Z" fill="#f8f2e4" stroke="#c9a24a" stroke-width="3"/>
+  <path d="M200 183 L200 176" stroke="#2f6f6a" stroke-width="2.0" stroke-linecap="round"/><path d="M193 169 Q193 177.4 200 177.4 Q207 177.4 207 169 Q200 162.7 193 169 Z" fill="#2f6f6a"/>
+  <path d="M200 205 L200 198" stroke="#2f6f6a" stroke-width="2.0" stroke-linecap="round"/><path d="M193 191 Q193 199.4 200 199.4 Q207 199.4 207 191 Q200 184.7 193 191 Z" fill="#2f6f6a"/>
+  <path d="M200 227 L200 220" stroke="#2f6f6a" stroke-width="2.0" stroke-linecap="round"/><path d="M193 213 Q193 221.4 200 221.4 Q207 221.4 207 213 Q200 206.7 193 213 Z" fill="#2f6f6a"/>
+  <circle cx="180" cy="148" r="3" fill="#c9a24a"/>
+  <circle cx="220" cy="148" r="3" fill="#c9a24a"/>
+</svg>

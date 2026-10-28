@@ -1,0 +1,385 @@
+/* ==========================================================================
+   traditions.css — стили страницы «Традиции народов»
+   Подключается только в traditions.html.
+   css/style.css не изменяется: это зона Ивана.
+   ========================================================================== */
+
+:root {
+  --t-bg: #f6f1e6;
+  --t-surface: #fffdf8;
+  --t-ink: #2c2a26;
+  --t-muted: #6d675d;
+  --t-line: #e4dccd;
+  --t-accent: #a33a2b;
+  --t-accent-soft: #f3e3de;
+  --t-radius: 20px;
+  --t-shadow: 0 10px 30px rgb(60 48 30 / 8%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.traditions-page {
+  margin: 0;
+  background: var(--t-bg);
+  color: var(--t-ink);
+  font: 16px/1.6 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Базовый каркас. :where() держит нулевую специфичность,
+   чтобы будущие правила из style.css могли всё переопределить. */
+:where(.traditions-page .site-header) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(18px, 5vw, 48px);
+  background: rgb(255 253 248 / 94%);
+  border-bottom: 1px solid var(--t-line);
+}
+
+:where(.traditions-page .site-logo) {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--t-ink);
+  text-decoration: none;
+}
+
+:where(.traditions-page .site-nav__list) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.traditions-page .site-nav__link) {
+  display: inline-block;
+  padding: 5px 1px;
+  color: var(--t-muted);
+  font-size: .95rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+:where(.traditions-page .site-nav__link):hover,
+:where(.traditions-page .site-nav__link)[aria-current="page"] {
+  color: var(--t-accent);
+  border-bottom-color: var(--t-accent);
+}
+
+.traditions-page .site-main {
+  width: min(1120px, 100% - 40px);
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.page-title {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+.page-intro {
+  max-width: 62ch;
+  margin: 0 0 28px;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--t-muted);
+}
+
+/* Фото в шапке страницы */
+.traditions-hero {
+  margin: 0 0 48px;
+}
+
+.traditions-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  object-position: center 62%;
+  border-radius: 24px;
+}
+
+.traditions-hero figcaption {
+  margin-top: 10px;
+  font-size: .85rem;
+  color: var(--t-muted);
+}
+
+.traditions-hero a,
+.traditions-photos a {
+  color: inherit;
+}
+
+/* Заголовки разделов */
+.section-title {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.section-intro {
+  max-width: 66ch;
+  margin: 0 0 24px;
+  color: var(--t-muted);
+}
+
+/* Сетка карточек */
+.traditions__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.tradition-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  background: var(--t-surface);
+  border: 1px solid var(--t-line);
+  border-radius: var(--t-radius);
+  box-shadow: var(--t-shadow);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.tradition-card:hover,
+.tradition-card:focus-visible {
+  z-index: 1;
+  transform: scale(1.02);
+  border-color: #d6c9b4;
+  box-shadow: 0 18px 40px rgb(60 48 30 / 16%);
+}
+
+.tradition-card:focus-visible {
+  outline: 3px solid var(--t-accent);
+  outline-offset: 4px;
+}
+
+.tradition-card__place {
+  margin: 0;
+  color: var(--t-accent);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.tradition-card__title {
+  margin: 4px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.tradition-card__block {
+  display: grid;
+  gap: 6px;
+}
+
+.tradition-card__label {
+  margin: 0;
+  color: var(--t-muted);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.tradition-card__block p {
+  margin: 0;
+}
+
+.tradition-card__block strong {
+  color: var(--t-ink);
+}
+
+/* Галерея рисунков */
+.tradition-card__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tradition-card__item {
+  margin: 0;
+  padding: 8px;
+  background: #f7f2e7;
+  border: 1px solid #ece4d6;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.tradition-card__frame {
+  display: block;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.tradition-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  transition: transform .3s ease;
+}
+
+.tradition-card:hover .tradition-card__img {
+  transform: scale(1.06);
+}
+
+.tradition-card__caption {
+  display: block;
+  margin-top: 6px;
+  color: var(--t-muted);
+  font-size: .78rem;
+  line-height: 1.3;
+}
+
+/* Фотографии после карточек */
+.traditions-photos {
+  margin-top: 56px;
+}
+
+.traditions-photos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.traditions-photos figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--t-surface);
+  border: 1px solid var(--t-line);
+  border-radius: 18px;
+}
+
+.traditions-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.traditions-photos figcaption {
+  padding: 12px 14px 14px;
+  color: var(--t-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+/* Словарь */
+.glossary {
+  margin-top: 56px;
+  padding: 28px;
+  background: var(--t-surface);
+  border: 1px solid var(--t-line);
+  border-radius: var(--t-radius);
+}
+
+.glossary__list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.glossary__list div {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) 1fr;
+  gap: 12px;
+}
+
+.glossary dt {
+  font-weight: 700;
+}
+
+.glossary dd {
+  margin: 0;
+  color: var(--t-muted);
+}
+
+:where(.traditions-page .site-footer) {
+  padding: 24px clamp(18px, 5vw, 48px);
+  color: var(--t-muted);
+  font-size: .85rem;
+  border-top: 1px solid var(--t-line);
+}
+
+:where(.traditions-page .site-footer p) {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .traditions-page .site-main {
+    width: calc(100% - 28px);
+    padding: 32px 0 56px;
+  }
+
+  .traditions-hero {
+    margin-bottom: 36px;
+  }
+
+  .traditions-hero img {
+    aspect-ratio: 3 / 2;
+    border-radius: 18px;
+  }
+
+  .traditions__grid {
+    gap: 16px;
+  }
+
+  .tradition-card {
+    padding: 18px;
+  }
+
+  .glossary {
+    padding: 20px;
+  }
+
+  .glossary__list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* На тач-экранах hover не нужен: карточка не должна «залипать». */
+@media (hover: none) {
+  .tradition-card:hover {
+    transform: none;
+    border-color: var(--t-line);
+    box-shadow: var(--t-shadow);
+  }
+
+  .tradition-card:hover .tradition-card__img {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tradition-card,
+  .tradition-card__img {
+    transition: none;
+  }
+
+  .tradition-card:hover,
+  .tradition-card:focus-visible {
+    transform: none;
+  }
+}

@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Традиции народов — Народы России</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/traditions.css">
 </head>
-<body>
+<body class="traditions-page">
   <header class="site-header">
     <a class="site-logo" href="index.html">Народы России</a>
     <nav class="site-nav" aria-label="Основная навигация">
@@ -22,21 +23,239 @@
 
   <main class="site-main">
     <h1 class="page-title">Традиции народов</h1>
-    <p class="page-intro">Праздники, орнаменты, обычаи и обряды народов Кузбасса.</p>
+    <p class="page-intro">Пять народов Кузбасса. У каждого — свой праздник и свой узор.</p>
 
-    <section class="page-section">
-      <h2 class="section-title">Праздники</h2>
-      <p>Материал готовится.</p>
+    <figure class="traditions-hero">
+      <img src="images/traditions/gornaya-shoria.jpg" alt="Горная Шория: сопки, покрытые тайгой" width="1400" height="906">
+      <figcaption>Горная Шория. Фото: <a href="https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%BD%D0%BE%D1%88%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D0%B5%D0%B9%D0%B7%D0%B0%D0%B6.jpg" target="_blank" rel="noopener">Strelogos</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ru" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</figcaption>
+    </figure>
+
+    <section class="traditions" aria-labelledby="traditions-title">
+      <h2 class="section-title" id="traditions-title">Праздники и орнаменты</h2>
+      <p class="section-intro">Наведи мышь на карточку — она станет больше. Рисунки в карточках сделаны по мотивам орнаментов, это не музейные фотографии.</p>
+
+      <div class="traditions__grid">
+        <article class="tradition-card" tabindex="0" aria-labelledby="shor-title">
+          <header>
+            <p class="tradition-card__place">Горная Шория</p>
+            <h3 class="tradition-card__title" id="shor-title">Шорцы</h3>
+          </header>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Праздники</h4>
+            <p><strong>Чыл пажы, 20–21 марта.</strong> Новый год в день весеннего равноденствия. День и ночь равны, дальше света больше.</p>
+            <p><strong>Мылтык-Пайрам, 18 января.</strong> Пельмени с сюрпризом: внутри монетка, спичка или бумажка. Что попадётся — то и случится.</p>
+          </div>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Орнамент</h4>
+            <p>Ромбы, зигзаги, треугольники. Узоры вырезали на бересте и вышивали на одежде.</p>
+          </div>
+
+          <ul class="tradition-card__gallery" aria-label="Рисунки с шорскими орнаментами">
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/shor-carpet.svg" alt="Рисунок ковра с шорским орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Ковёр</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/shor-pattern.svg" alt="Рисунок шорского узора" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Узор</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/shor-plate.svg" alt="Рисунок тарелки с шорским орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Тарелка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/shor-toy.svg" alt="Рисунок деревянного оленя" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Олень</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="tradition-card" tabindex="0" aria-labelledby="teleut-title">
+          <header>
+            <p class="tradition-card__place">Село Беково, Беловский район</p>
+            <h3 class="tradition-card__title" id="teleut-title">Телеуты</h3>
+          </header>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Праздники</h4>
+            <p><strong>Сомо.</strong> Праздник приходится на Троицу. В берёзовой роще молились, потом ставили берёзу у дома. К веткам привязывали красные и белые ленты.</p>
+            <p><strong>Пельменек.</strong> Летний праздник в Беково. Лепят большие пельмени с кониной, ходят в гости и поют песни.</p>
+          </div>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Орнамент</h4>
+            <p>Бисер, монеты, войлок. Женщины шили нагрудники, плели шнуры и делали мозаичные покрывала.</p>
+          </div>
+
+          <ul class="tradition-card__gallery" aria-label="Рисунки с телеутскими орнаментами">
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/teleut-carpet.svg" alt="Рисунок войлочного ковра телеутов" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Ковёр</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/teleut-pattern.svg" alt="Рисунок телеутского узора" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Узор</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/teleut-plate.svg" alt="Рисунок тарелки с телеутским орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Тарелка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/teleut-toy.svg" alt="Рисунок тряпичной куклы" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Кукла</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="tradition-card" tabindex="0" aria-labelledby="kalmak-title">
+          <header>
+            <p class="tradition-card__place">Деревня Юрты-Константиновы</p>
+            <h3 class="tradition-card__title" id="kalmak-title">Калмаки</h3>
+          </header>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Праздники</h4>
+            <p><strong>Ураза-байрам.</strong> Утром — молитва. Потом гости, чай и сладости. Праздник идёт три дня.</p>
+            <p><strong>Курбан-байрам.</strong> Праздник жертвы. Мясо делят на три части: семье, гостям и бедным.</p>
+          </div>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Орнамент</h4>
+            <p>Геометрия и цветы. Узоры вышивали на ткани, а ещё ткали половики.</p>
+          </div>
+
+          <ul class="tradition-card__gallery" aria-label="Рисунки с калмацкими орнаментами">
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/kalmak-carpet.svg" alt="Рисунок ковра с калмацким орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Ковёр</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/kalmak-pattern.svg" alt="Рисунок калмацкого узора" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Узор</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/kalmak-plate.svg" alt="Рисунок тарелки с калмацким орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Тарелка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/kalmak-toy.svg" alt="Рисунок куклы в платке" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Кукла в платке</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="tradition-card" tabindex="0" aria-labelledby="tatar-title">
+          <header>
+            <p class="tradition-card__place">Кузбасс</p>
+            <h3 class="tradition-card__title" id="tatar-title">Сибирские татары</h3>
+          </header>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Праздники</h4>
+            <p><strong>Амаль.</strong> Весенний Новый год в день равноденствия. Его встречают 21 марта.</p>
+            <p><strong>Карга путка.</strong> «Грачиная каша». Кашу варили, когда прилетали грачи, — перед посевной.</p>
+          </div>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Орнамент</h4>
+            <p>Ромбы, зигзаги, ступенчатые фигуры. Реже — птицы и звери: ислам запрещал изображать живых.</p>
+          </div>
+
+          <ul class="tradition-card__gallery" aria-label="Рисунки с сибирско-татарскими орнаментами">
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/tatar-carpet.svg" alt="Рисунок ковра с сибирско-татарским орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Ковёр</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/tatar-pattern.svg" alt="Рисунок сибирско-татарского узора" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Узор</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/tatar-plate.svg" alt="Рисунок тарелки с татарским орнаментом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Тарелка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/tatar-toy.svg" alt="Рисунок глиняной свистульки" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Свистулька</span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="tradition-card" tabindex="0" aria-labelledby="rus-title">
+          <header>
+            <p class="tradition-card__place">Кузбасс</p>
+            <h3 class="tradition-card__title" id="rus-title">Русские</h3>
+          </header>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Праздники</h4>
+            <p><strong>Масленица.</strong> Неделя перед Великим постом. Блины, чучело, катание с гор.</p>
+            <p><strong>Троица.</strong> Берёзовые ветки, венки, хороводы.</p>
+          </div>
+
+          <div class="tradition-card__block">
+            <h4 class="tradition-card__label">Орнамент</h4>
+            <p>Вышивка крестом: ромбы, птицы, древо. Резьба по дереву — наличники и прялки.</p>
+          </div>
+
+          <ul class="tradition-card__gallery" aria-label="Рисунки с русскими узорами">
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/rus-carpet.svg" alt="Рисунок половика с русским узором" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Половик</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/rus-pattern.svg" alt="Рисунок русской вышивки крестом" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Вышивка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/rus-plate.svg" alt="Рисунок тарелки с русским узором" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Тарелка</span>
+            </li>
+            <li class="tradition-card__item">
+              <span class="tradition-card__frame"><img class="tradition-card__img" src="images/traditions/rus-toy.svg" alt="Рисунок матрёшки" width="400" height="300" loading="lazy"></span>
+              <span class="tradition-card__caption">Матрёшка</span>
+            </li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section class="page-section">
-      <h2 class="section-title">Орнаменты</h2>
-      <p>Материал готовится.</p>
+    <section class="traditions-photos" aria-labelledby="photos-title">
+      <h2 class="section-title" id="photos-title">Ещё фотографии</h2>
+      <div class="traditions-photos__grid">
+        <figure>
+          <img src="images/traditions/teleut-costumes.jpg" alt="Телеутские костюмы в музее" width="640" height="480" loading="lazy">
+          <figcaption>Телеутские костюмы. Фото: <a href="https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC%D1%8B_%D1%82%D0%B5%D0%BB%D0%B5%D1%83%D1%82%D0%BE%D0%B2.jpg" target="_blank" rel="noopener">Maslennikovaolgav</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener">CC BY 4.0</a>.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/traditions/teleut-izba.jpg" alt="Русская изба и жилище телеутов в музее" width="640" height="480" loading="lazy">
+          <figcaption>Русская изба и жилище телеутов. Фото: <a href="https://commons.wikimedia.org/wiki/File:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F_%D0%B8%D0%B7%D0%B1%D0%B0_%D0%B8_%D0%B6%D0%B8%D0%BB%D0%B8%D1%89%D0%B5_%D1%82%D0%B5%D0%BB%D0%B5%D1%83%D1%82%D0%BE%D0%B2.jpg" target="_blank" rel="noopener">Maslennikovaolgav</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank" rel="noopener">CC BY 4.0</a>.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/traditions/tatar-jewellery.jpg" alt="Татарские украшения, ткань и обувь в музее" width="1000" height="888" loading="lazy">
+          <figcaption>Татарские украшения и вещи, XIX век. Фото: <a href="https://commons.wikimedia.org/wiki/File:Tatar_jewellery_and_items_-_Palace_of_the_Viceroy,_Tobolsk.jpg" target="_blank" rel="noopener">Лапоть</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ru" target="_blank" rel="noopener">CC0</a>.</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="page-section">
-      <h2 class="section-title">Обычаи и обряды</h2>
-      <p>Материал готовится.</p>
+    <section class="glossary" aria-labelledby="glossary-title">
+      <h2 class="section-title" id="glossary-title">Словарь</h2>
+      <dl class="glossary__list">
+        <div>
+          <dt>Орнамент</dt>
+          <dd>Узор из повторяющихся фигур.</dd>
+        </div>
+        <div>
+          <dt>Обряд</dt>
+          <dd>Действия, которые повторяют по традиции.</dd>
+        </div>
+        <div>
+          <dt>Войлок</dt>
+          <dd>Плотный материал из свалянной шерсти.</dd>
+        </div>
+      </dl>
     </section>
   </main>
 

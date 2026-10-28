@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Глиняная свистулька</title>
+  <rect width="400" height="300" rx="18" fill="#eef1f6"/>
+  <ellipse cx="200" cy="258" rx="76" ry="9" fill="#22303f" opacity=".08"/>
+  <path d="M142 166 L92 144 L110 170 Z" fill="#3f6b4f" stroke="#22303f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M142 176 L88 176 L108 188 Z" fill="#3f6b4f" stroke="#22303f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M142 186 L98 208 L114 194 Z" fill="#3f6b4f" stroke="#22303f" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="200" cy="168" rx="66" ry="45" fill="#c9a24a" stroke="#22303f" stroke-width="3"/>
+  <circle cx="258" cy="120" r="27" fill="#c9a24a" stroke="#22303f" stroke-width="3"/>
+  <path d="M283 116 L308 124 L283 132 Z" fill="#2f5d8c" stroke="#22303f" stroke-width="2"/>
+  <circle cx="266" cy="112" r="3" fill="#22303f"/>
+  <path d="M188 140 Q214 128 236 152 Q214 172 186 168 Z" fill="#2f5d8c" stroke="#22303f" stroke-width="2.5"/>
+  <circle cx="214" cy="182" r="7" fill="#f7f3e7" stroke="#22303f" stroke-width="2"/>
+  <path d="M166 175.5 L170.5 180 L166 184.5 L161.5 180 Z" fill="#f7f3e7"/>
+  <path d="M188 191.5 L192.5 196 L188 200.5 L183.5 196 Z" fill="#f7f3e7"/>
+  <path d="M226 185.5 L230.5 190 L226 194.5 L221.5 190 Z" fill="#f7f3e7"/>
+</svg>

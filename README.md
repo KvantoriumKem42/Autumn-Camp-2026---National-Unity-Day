@@ -7,7 +7,7 @@
 
 - `index.html` — главная страница, блок «Народы Кузбасса»;
 - `traditions.html` — традиции народов: праздники, орнаменты, обычаи;
-- `cuisine.html` — кухня народов;
+- `cuisine.html` — кухня народов: интерактивные карточки рецептов;
 - `history.html` — история народов;
 - `games.html` — народные игры.
 
@@ -37,6 +37,15 @@
 │       ├── kalmaki.js
 │       ├── sibirskie-tatary.js
 │       └── russkie.js
+│   ├── traditions.css
+│   └── cuisine.css
+├── js/
+│   ├── cuisine-data.js
+│   └── cuisine.js
+├── images/
+│   ├── traditions/
+│   └── cuisine/
+│   └── history.css
 ├── AGENTS.md
 ├── README.md
 ├── .gitignore

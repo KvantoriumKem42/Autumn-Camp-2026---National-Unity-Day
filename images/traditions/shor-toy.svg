@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Деревянный олень</title>
+  <rect width="400" height="300" rx="18" fill="#eef2e6"/>
+  <ellipse cx="200" cy="258" rx="84" ry="10" fill="#2f3b2c" opacity=".08"/>
+  <rect x="128" y="232" width="144" height="13" rx="6" fill="#c99a3e" stroke="#2f3b2c" stroke-width="2.5"/>
+  <circle cx="152" cy="252" r="10" fill="#a33a2b" stroke="#2f3b2c" stroke-width="2.5"/>
+  <circle cx="152" cy="252" r="3" fill="#f7f1e3"/>
+  <circle cx="248" cy="252" r="10" fill="#a33a2b" stroke="#2f3b2c" stroke-width="2.5"/>
+  <circle cx="248" cy="252" r="3" fill="#f7f1e3"/>
+  <line x1="168" y1="184" x2="168" y2="232" stroke="#c99a3e" stroke-width="7" stroke-linecap="round"/>
+  <line x1="188" y1="184" x2="188" y2="232" stroke="#c99a3e" stroke-width="7" stroke-linecap="round"/>
+  <line x1="214" y1="184" x2="214" y2="232" stroke="#c99a3e" stroke-width="7" stroke-linecap="round"/>
+  <line x1="234" y1="184" x2="234" y2="232" stroke="#c99a3e" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="200" cy="160" rx="56" ry="30" fill="#c99a3e" stroke="#2f3b2c" stroke-width="3"/>
+  <path d="M238 148 L252 110" stroke="#c99a3e" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="260" cy="102" rx="21" ry="15" fill="#c99a3e" stroke="#2f3b2c" stroke-width="3"/>
+  <path d="M258 88 L250 70 M250 70 L243 62 M258 88 L258 66 M258 66 L264 58 M258 88 L268 72 M268 72 L277 66" stroke="#a33a2b" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M278 100 L290 96 L279 108 Z" fill="#c99a3e" stroke="#2f3b2c" stroke-width="2"/>
+  <circle cx="267" cy="98" r="2.4" fill="#2f3b2c"/>
+  <path d="M182 151 L187 156 L182 161 L177 156 Z" fill="#a33a2b"/>
+  <path d="M200 159 L205 164 L200 169 L195 164 Z" fill="#a33a2b"/>
+  <path d="M218 149 L223 154 L218 159 L213 154 Z" fill="#a33a2b"/>
+  <path d="M146 154 L134 142 L136 160 Z" fill="#a33a2b"/>
+</svg>
