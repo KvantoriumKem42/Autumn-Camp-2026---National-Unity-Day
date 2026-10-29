@@ -11,10 +11,11 @@
 .mg-sh__field {
   --sh-pos: 0;
   position: relative;
-  height: 170px;
+  height: clamp(300px, 32vw, 440px);
   border: 1px solid rgb(66 62 3 / 18%);
   border-radius: 12px;
   background:
+    radial-gradient(circle at 50% 46%, rgba(140, 131, 3, 0.1), transparent 38%),
     linear-gradient(90deg, rgba(140, 59, 46, 0.14) 0 16%, rgba(140, 59, 46, 0.04) 16% 50%,
       rgba(31, 27, 24, 0.03) 50% 84%, rgba(31, 27, 24, 0.13) 84% 100%),
     #f3f0dc;
@@ -52,9 +53,9 @@
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 10px;
-  height: 50%;
-  margin-left: -5px;
+  width: 12px;
+  height: 58%;
+  margin-left: -6px;
   border-radius: 3px 3px 0 0;
   background: #8a5a35;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
@@ -65,9 +66,10 @@
   position: absolute;
   top: 46%;
   left: calc(50% - var(--sh-pos) * 1%);
-  width: 9rem;
-  height: 0.95rem;
-  margin: -0.475rem 0 0 -4.5rem;
+  width: clamp(10rem, 20vw, 16rem);
+  height: 1.1rem;
+  margin-top: -0.55rem;
+  transform: translateX(-50%);
   border-radius: 999px;
   background: linear-gradient(180deg, #c08a52, #8a5a35);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.24);
@@ -78,9 +80,9 @@
 .mg-sh__grip {
   position: absolute;
   top: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: -0.75rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-top: -0.85rem;
   border: 2px solid #6f461f;
   border-radius: 50%;
   background: #d9a05b;
@@ -96,8 +98,8 @@
 
 .mg-sh__side {
   position: absolute;
-  bottom: 0.6rem;
-  font-size: 0.8rem;
+  bottom: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #5f5b49;
@@ -114,12 +116,13 @@
 
 @media (max-width: 600px) {
   .mg-sh__field {
-    height: 150px;
+    height: 320px;
   }
 
   .mg-sh__stick {
     width: 7rem;
-    margin-left: -3.5rem;
+    height: 0.9rem;
+    margin-top: -0.45rem;
   }
 
   .mg-sh__grip {

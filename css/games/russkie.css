@@ -25,11 +25,13 @@
 /* Поле: трава, земля, фигура из чурок. */
 .mg-gor__field {
   position: relative;
-  height: 240px;
+  height: clamp(320px, 34vw, 480px);
   border: 1px solid rgb(66 62 3 / 18%);
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #e7efe4 0 72%, #d8c9b6 72% 100%);
+  background:
+    radial-gradient(circle at 50% 66%, rgba(140, 131, 3, 0.1), transparent 38%),
+    linear-gradient(to bottom, #e7efe4 0 72%, #d8c9b6 72% 100%);
   cursor: crosshair;
   outline: none;
   touch-action: manipulation;
@@ -42,9 +44,9 @@
 .mg-gor__figure {
   position: absolute;
   left: 50%;
-  bottom: 16%;
-  width: 150px;
-  height: 90px;
+  bottom: 18%;
+  width: 240px;
+  height: 144px;
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -150,11 +152,11 @@
 
 @media (max-width: 600px) {
   .mg-gor__field {
-    height: 210px;
+    height: 340px;
   }
 
   .mg-gor__figure {
-    width: 120px;
-    height: 72px;
+    width: 160px;
+    height: 96px;
   }
 }
