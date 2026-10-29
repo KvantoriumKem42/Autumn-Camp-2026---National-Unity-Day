@@ -13,6 +13,7 @@
   var arrow = root.querySelector('[data-arrow]');
   var bow = root.querySelector('[data-bow]');
   var targetEl = root.querySelector('[data-target]');
+  var distanceEl = root.querySelector('[data-target-distance]');
   var windEl = root.querySelector('[data-wind]');
   var powerInput = root.querySelector('[data-power]');
   var angleInput = root.querySelector('[data-angle]');
@@ -24,7 +25,9 @@
   var logEl = root.querySelector('[data-log]');
 
   var FIELD = 10;          /* ширина поля в метрах */
-  var TARGET = 7.5;        /* расстояние до плоскости мишени */
+  var TARGET_MIN = 5.5;    /* ближайшее расстояние до мишени */
+  var TARGET_MAX = 8.0;    /* самое дальнее расстояние */
+  var targetDistance = 7.5;/* текущее расстояние до плоскости мишени */
   var LAUNCH_X = 0.5;      /* где стоит лук */
   var G = 9.8;
   var FACE_R = 1.1;        /* радиус мишени в метрах */
@@ -60,6 +63,14 @@
     windEl.textContent = windText(state.wind);
   }
 
+  /* Ставим мишень на новое случайное расстояние и обновляем подпись. */
+  function newTargetDistance() {
+    targetDistance = Math.round((TARGET_MIN + Math.random() * (TARGET_MAX - TARGET_MIN)) * 10) / 10;
+    var left = (LAUNCH_X + targetDistance) / FIELD * 100;
+    targetEl.style.setProperty('--arch-target-left', left.toFixed(2) + '%');
+    if (distanceEl) distanceEl.textContent = 'Цель: ' + num(targetDistance) + ' м';
+  }
+
   function updateBow() {
     bow.style.setProperty('--arch-angle', angleInput.value);
   }
@@ -70,7 +81,7 @@
     var rad = angle * Math.PI / 180;
     var vx = speed * Math.cos(rad);
     var vy = speed * Math.sin(rad);
-    var distance = TARGET - LAUNCH_X;
+    var distance = targetDistance - LAUNCH_X;
     var flight = distance / vx;
     var height = vy * flight - 0.5 * G * flight * flight;
     var groundFlight = 2 * vy / G;
@@ -147,6 +158,7 @@
 
     state.busy = false;
     newWind();
+    newTargetDistance();
     setStatus('Выстрелов осталось: ' + (MAX_SHOTS - state.shots.length) + '. Подстрой силу и угол.');
     lockControls(false);
     arrow.style.opacity = '0';
@@ -236,6 +248,7 @@
     lockControls(false);
     resetBtn.hidden = true;
     newWind();
+    newTargetDistance();
     setStatus('Выстрелов осталось: 3. В центре мишени — 10 очков.');
   }
 

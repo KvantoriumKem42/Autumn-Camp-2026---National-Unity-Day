@@ -5,22 +5,22 @@
    ========================================================================== */
 
 :root {
-  --c-bg: #f6f1e6;
-  --c-surface: #fffdf8;
-  --c-surface-soft: #fbf6ec;
-  --c-ink: #2c2a26;
-  --c-muted: #6d675d;
-  --c-line: #e4dccd;
-  --c-accent: #a33a2b;
-  --c-accent-dark: #7d2a1f;
-  --c-accent-soft: #f3e3de;
+  --c-bg: #e2e0be;
+  --c-surface: #fffdf6;
+  --c-surface-soft: #f3f0dc;
+  --c-ink: #23282a;
+  --c-muted: #5f5b49;
+  --c-line: rgb(66 62 3 / 18%);
+  --c-accent: #8c8303;
+  --c-accent-dark: #595402;
+  --c-accent-soft: #efeccf;
   --c-green: #4f6b4a;
-  --c-green-soft: #e8efe3;
-  --c-gold: #c98a1e;
-  --c-radius: 22px;
-  --c-serif: "PT Serif", Cambria, "Times New Roman", serif;
-  --c-shadow: 0 10px 30px rgb(60 48 30 / 8%);
-  --c-shadow-hover: 0 18px 40px rgb(60 48 30 / 15%);
+  --c-green-soft: #e3e9d9;
+  --c-gold: #b8860b;
+  --c-radius: 24px;
+  --c-serif: var(--font-display);
+  --c-shadow: 0 8px 24px rgb(35 40 42 / 8%);
+  --c-shadow-hover: 0 18px 40px rgb(35 40 42 / 15%);
 }
 
 *,
@@ -33,7 +33,7 @@ body.cuisine-page {
   margin: 0;
   background: var(--c-bg);
   color: var(--c-ink);
-  font: 16px/1.6 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font: 400 16px/1.65 var(--font-body);
 }
 
 html.has-modal,
@@ -93,11 +93,12 @@ html.has-modal body {
 }
 
 .cuisine-page .page-title {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  color: var(--olive-deep);
   font-family: var(--c-serif);
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: -.02em;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: .98;
+  letter-spacing: -.03em;
 }
 
 .cuisine-page .page-intro {
@@ -117,9 +118,11 @@ html.has-modal body {
 
 .cuisine-page .section-title {
   margin: 0 0 8px;
-  font-family: var(--c-serif);
+  font-family: var(--font-ui);
+  font-weight: 800;
   font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.15;
+  letter-spacing: -.02em;
 }
 
 .cuisine-page .section-intro {
@@ -194,7 +197,7 @@ html.has-modal body {
 }
 
 .dish-sort__select:hover {
-  border-color: #d6c9b4;
+  border-color: rgb(66 62 3 / 18%);
 }
 
 .dish-sort__select:focus-visible {
@@ -230,7 +233,7 @@ html.has-modal body {
 }
 
 .dish-card:hover {
-  border-color: #d6c9b4;
+  border-color: rgb(66 62 3 / 18%);
   box-shadow: var(--c-shadow-hover);
 }
 
@@ -261,7 +264,7 @@ html.has-modal body {
   overflow: hidden;
   align-self: start;
   border-radius: 16px;
-  background: #e8dfcf;
+  background: #efeccf;
 }
 
 .dish-card__media img {
@@ -336,7 +339,7 @@ html.has-modal body {
 .dish-card__summary:hover .dish-card__toggle-icon {
   color: var(--c-accent);
   background: var(--c-accent-soft);
-  border-color: #e5c9c0;
+  border-color: #d8d4b0;
 }
 
 .dish-card__meta {
@@ -423,7 +426,7 @@ html.has-modal body {
 .star {
   position: relative;
   display: inline-flex;
-  color: #d8cdbb;
+  color: #d3d0a4;
   line-height: 1;
   cursor: pointer;
 }
@@ -486,6 +489,27 @@ html.has-modal body {
   border: 1px solid var(--c-line);
   border-radius: 24px;
   box-shadow: 0 30px 80px rgb(30 24 17 / 35%);
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-accent) rgb(140 131 3 / 12%);
+}
+
+.dish-modal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dish-modal::-webkit-scrollbar-track {
+  background: rgb(140 131 3 / 10%);
+  border-radius: 999px;
+}
+
+.dish-modal::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--c-accent), var(--c-accent-dark));
+  border: 3px solid var(--c-surface-soft);
+  border-radius: 999px;
+}
+
+.dish-modal::-webkit-scrollbar-thumb:hover {
+  background: var(--c-accent-dark);
 }
 
 .dish-modal:focus {
@@ -551,7 +575,7 @@ html.has-modal body {
 .dish-modal__close:hover {
   color: var(--c-accent-dark);
   background: var(--c-accent-soft);
-  border-color: #e5c9c0;
+  border-color: #d8d4b0;
 }
 
 .dish-modal__close:focus-visible {
@@ -605,11 +629,11 @@ html.has-modal body {
 .dish-card__note {
   margin: 0;
   padding: 10px 14px;
-  color: #5f5a50;
+  color: #5f5b49;
   font-size: .86rem;
   line-height: 1.5;
-  background: #fff8e9;
-  border-left: 3px solid #d9b36a;
+  background: #f3f0dc;
+  border-left: 3px solid #8c8303;
   border-radius: 0 10px 10px 0;
 }
 
@@ -635,7 +659,7 @@ html.has-modal body {
 .dish-progress {
   height: 10px;
   overflow: hidden;
-  background: #e9e0d1;
+  background: #e6e3c6;
   border-radius: 999px;
 }
 
@@ -643,7 +667,7 @@ html.has-modal body {
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--c-accent), #c66a3f);
+  background: linear-gradient(90deg, var(--c-accent), #595402);
   border-radius: inherit;
   transition: width .3s ease;
 }
@@ -706,7 +730,7 @@ html.has-modal body {
 }
 
 .ingredient-check:hover {
-  background: #f7f0e4;
+  background: #f3f0dc;
 }
 
 .ingredient-check.is-checked {
@@ -726,7 +750,7 @@ html.has-modal body {
   width: 22px;
   height: 22px;
   background: #fff;
-  border: 2px solid #c9bca8;
+  border: 2px solid #c9c79f;
   border-radius: 6px;
   transition: background .2s ease, border-color .2s ease;
 }
@@ -809,8 +833,8 @@ html.has-modal body {
 }
 
 .step:hover {
-  background: #fffdf8;
-  border-color: #d6c9b4;
+  background: #fffdf6;
+  border-color: rgb(66 62 3 / 18%);
 }
 
 .step:focus-visible {
@@ -820,7 +844,7 @@ html.has-modal body {
 
 .step.is-done {
   background: var(--c-green-soft);
-  border-color: #cbd9c2;
+  border-color: #c9d2b8;
 }
 
 .step__num {
@@ -863,7 +887,7 @@ html.has-modal body {
 }
 
 .step.is-done .step__text {
-  color: #5f6b58;
+  color: #4f6b4a;
 }
 
 .step__time {
@@ -872,13 +896,13 @@ html.has-modal body {
   color: var(--c-muted);
   font-size: .76rem;
   white-space: nowrap;
-  background: #f5eee2;
+  background: #f3f0dc;
   border-radius: 999px;
 }
 
 .step.is-done .step__time {
   color: var(--c-green);
-  background: #dbe7d4;
+  background: #dfe7d2;
 }
 
 .step__check {
@@ -886,7 +910,7 @@ html.has-modal body {
   width: 22px;
   height: 22px;
   margin-top: 5px;
-  border: 2px solid #d3c7b4;
+  border: 2px solid #c9c79f;
   border-radius: 50%;
 }
 
@@ -983,7 +1007,7 @@ html.has-modal body {
   padding: 18px 20px;
   color: var(--c-accent-dark);
   background: var(--c-accent-soft);
-  border: 1px solid #e5c9c0;
+  border: 1px solid #d8d4b0;
   border-radius: 14px;
 }
 

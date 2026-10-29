@@ -5,14 +5,14 @@
    ========================================================================== */
 
 .mg {
-  --mg-accent: #8c3b2e;
-  --mg-accent-dark: #7a2f24;
-  --mg-accent-soft: #f3e4dd;
-  --mg-ink: #1f1b18;
-  --mg-muted: #6b625b;
-  --mg-line: #d9d2cb;
-  --mg-surface: #ffffff;
-  --mg-soft: #f7f2ed;
+  --mg-accent: #8c8303;
+  --mg-accent-dark: #595402;
+  --mg-accent-soft: #efeccf;
+  --mg-ink: #23282a;
+  --mg-muted: #5f5b49;
+  --mg-line: rgb(66 62 3 / 18%);
+  --mg-surface: #e2e0be;
+  --mg-soft: #f3f0dc;
   margin: 2rem 0 3rem;
   color: var(--mg-ink);
 }
@@ -26,20 +26,35 @@
   margin: 0 0 1.75rem;
   padding: 0.5rem 0;
   position: sticky;
-  top: 0;
+  top: 72px;
   z-index: 2;
   background: var(--mg-surface);
+  counter-reset: mg-tab;
 }
 
 .mg__tab {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.5rem 0.95rem;
   border: 1px solid var(--mg-line);
   border-radius: 999px;
+  background: rgb(255 253 246 / 55%);
   color: var(--mg-ink);
-  font-size: 0.95rem;
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
+  counter-increment: mg-tab;
+}
+
+.mg__tab::before {
+  content: "0" counter(mg-tab);
+  margin-right: 0.45rem;
+  color: var(--mg-accent);
+  font-size: 0.72em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .mg__tab:hover {
@@ -60,6 +75,15 @@ body:has(#russkie:target) .mg__tab[href="#russkie"],
 body:not(:has(.mg__panel:target)) .mg__tab[href="#shortsy"] {
   background: var(--mg-accent);
   border-color: var(--mg-accent);
+  color: #ffffff;
+}
+
+body:has(#shortsy:target) .mg__tab[href="#shortsy"]::before,
+body:has(#teleuty:target) .mg__tab[href="#teleuty"]::before,
+body:has(#kalmaki:target) .mg__tab[href="#kalmaki"]::before,
+body:has(#sibirskie-tatary:target) .mg__tab[href="#sibirskie-tatary"]::before,
+body:has(#russkie:target) .mg__tab[href="#russkie"]::before,
+body:not(:has(.mg__panel:target)) .mg__tab[href="#shortsy"]::before {
   color: #ffffff;
 }
 
@@ -97,34 +121,69 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
 
 .mg__name {
   margin: 0;
+  font-family: var(--font-ui);
   font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
   line-height: 1.2;
-  color: var(--mg-ink);
+  color: var(--olive-deep);
 }
 
 .mg__game {
   margin: 0;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--mg-accent);
 }
 
+/* Игра идёт первой на всю ширину, правила — под ней в две колонки. */
 .mg__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  align-items: start;
+}
+
+.mg__stage {
+  order: -1;
+  width: 100%;
 }
 
 .mg__about {
-  max-width: 62ch;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2.5rem;
+  max-width: none;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--mg-line);
+}
+
+.mg__about .mg__subtitle:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.mg__about p:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.mg__about .mg__subtitle:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.mg__about p:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .mg__subtitle {
   margin: 0 0 0.5rem;
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
   font-size: 1.05rem;
+  font-weight: 700;
   line-height: 1.35;
-  color: var(--mg-accent);
 }
 
 .mg__about p {
@@ -139,8 +198,9 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
 .mg__stage {
   padding: 1rem;
   border: 1px solid var(--mg-line);
-  border-radius: 14px;
-  background: var(--mg-soft);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
 }
 
 /* Общие детали игр (полоски, кнопки, сообщения) ---------------------------- */
@@ -163,7 +223,7 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
 .mg__bar {
   height: 0.55rem;
   border-radius: 999px;
-  background: #e2d8ce;
+  background: #d8d4b0;
   overflow: hidden;
 }
 
@@ -191,6 +251,7 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
 .mg__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin: 0.9rem 0 0;
 }
@@ -256,8 +317,22 @@ body:has(.mg__panel:target) .mg__panel--first:not(:target) {
 /* Узкий экран -------------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .mg__layout {
+  .mg__about {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mg__about .mg__subtitle:nth-of-type(1),
+  .mg__about .mg__subtitle:nth-of-type(2),
+  .mg__about p:nth-of-type(1),
+  .mg__about p:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .mg__tabs {
+    position: static;
   }
 }
 

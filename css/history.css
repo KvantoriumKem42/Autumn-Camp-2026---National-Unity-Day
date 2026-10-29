@@ -5,11 +5,11 @@
    ========================================================================== */
 
 .hist {
-  --hist-accent: #8c3b2e;
-  --hist-ink: #1f1b18;
-  --hist-muted: #6b625b;
-  --hist-line: #d9d2cb;
-  --hist-surface: #ffffff;
+  --hist-accent: #8c8303;
+  --hist-ink: #23282a;
+  --hist-muted: #5f5b49;
+  --hist-line: rgb(66 62 3 / 18%);
+  --hist-surface: #e2e0be;
   margin: 2rem 0 3rem;
 }
 
@@ -22,20 +22,35 @@
   margin: 0 0 1.75rem;
   padding: 0.5rem 0;
   position: sticky;
-  top: 0;
+  top: 72px;
   z-index: 2;
   background: var(--hist-surface);
+  counter-reset: hist-tab;
 }
 
 .hist__tab {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.5rem 0.95rem;
   border: 1px solid var(--hist-line);
   border-radius: 999px;
+  background: rgb(255 253 246 / 55%);
   color: var(--hist-ink);
-  font-size: 0.95rem;
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
+  counter-increment: hist-tab;
+}
+
+.hist__tab::before {
+  content: "0" counter(hist-tab);
+  margin-right: 0.45rem;
+  color: var(--hist-accent);
+  font-size: 0.72em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .hist__tab:hover {
@@ -59,11 +74,21 @@ body:not(:has(.hist__panel:target)) .hist__tab[href="#shortsy"] {
   color: #ffffff;
 }
 
+body:has(#shortsy:target) .hist__tab[href="#shortsy"]::before,
+body:has(#teleuty:target) .hist__tab[href="#teleuty"]::before,
+body:has(#kalmaki:target) .hist__tab[href="#kalmaki"]::before,
+body:has(#sibirskie-tatary:target) .hist__tab[href="#sibirskie-tatary"]::before,
+body:has(#russkie:target) .hist__tab[href="#russkie"]::before,
+body:not(:has(.hist__panel:target)) .hist__tab[href="#shortsy"]::before {
+  color: #ffffff;
+}
+
 /* Панели ------------------------------------------------------------------ */
 
 .hist__panel {
   display: none;
   scroll-margin-top: 5.5rem;
+  counter-reset: hist-stage;
 }
 
 /* Первый народ виден, пока не выбран другой. */
@@ -83,9 +108,12 @@ body:has(.hist__panel:target) .hist__panel--first:not(:target) {
 
 .hist__name {
   margin: 0 0 0.6rem;
+  font-family: var(--font-ui);
   font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
   line-height: 1.2;
-  color: var(--hist-ink);
+  color: var(--olive-deep);
 }
 
 .hist__lead {
@@ -97,17 +125,40 @@ body:has(.hist__panel:target) .hist__panel--first:not(:target) {
 }
 
 .hist__stage {
-  max-width: 62ch;
+  position: relative;
+  max-width: none;
   margin: 0 0 2rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--hist-line);
+  padding: 0 2.7rem;
+  border-left: 1px solid var(--hist-line);
+  counter-increment: hist-stage;
 }
 
 .hist__stage-title {
+  position: relative;
   margin: 0 0 0.6rem;
-  color: var(--hist-accent);
-  font-size: 1.15rem;
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
+  font-size: 1.1rem;
+  font-weight: 700;
   line-height: 1.35;
+}
+
+.hist__stage-title::before {
+  content: counter(hist-stage, decimal-leading-zero);
+  position: absolute;
+  top: 0.05rem;
+  left: -2.7rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--hist-accent);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .hist__stage p {
@@ -121,6 +172,12 @@ body:has(.hist__panel:target) .hist__panel--first:not(:target) {
 
 /* Узкий экран -------------------------------------------------------------- */
 
+@media (max-width: 720px) {
+  .hist__tabs {
+    position: static;
+  }
+}
+
 @media (max-width: 600px) {
   .hist__tabs {
     gap: 0.4rem;
@@ -128,7 +185,7 @@ body:has(.hist__panel:target) .hist__panel--first:not(:target) {
 
   .hist__tab {
     padding: 0.45rem 0.7rem;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
   }
 
   .hist__name {
@@ -136,7 +193,14 @@ body:has(.hist__panel:target) .hist__panel--first:not(:target) {
   }
 
   .hist__stage {
-    padding-left: 0.8rem;
+    padding: 0 2.3rem;
+  }
+
+  .hist__stage-title::before {
+    left: -2.3rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.6rem;
   }
 }
 

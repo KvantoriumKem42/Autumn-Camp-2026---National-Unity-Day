@@ -12,10 +12,10 @@
 .mg-arch__sky {
   position: relative;
   height: 210px;
-  border: 1px solid #d9d2cb;
+  border: 1px solid rgb(66 62 3 / 18%);
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #dde9ef 0 62%, #e9dfcd 62% 100%);
+  background: linear-gradient(to bottom, #e3e9d9 0 62%, #e6e3c6 62% 100%);
 }
 
 .mg-arch__wind,
@@ -26,7 +26,7 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   font-size: 0.8rem;
-  color: #6b625b;
+  color: #5f5b49;
 }
 
 .mg-arch__wind {
@@ -37,22 +37,22 @@
   right: 0.6rem;
 }
 
-/* Мишень стоит на линии земли в 7,5 м от стрелка. */
+/* Мишень стоит на линии земли. Расстояние задаёт JS через --arch-target-left. */
 .mg-arch__target {
   position: absolute;
-  left: 75%;
+  left: min(var(--arch-target-left, 75%), calc(100% - 52px));
   bottom: 38%;
   width: 104px;
   height: 104px;
   border-radius: 50%;
   transform: translateX(-50%);
   background: radial-gradient(circle at 50% 50%,
-    #8c3b2e 0 15%,
-    #f6f1ec 15% 31%,
-    #8c3b2e 31% 49%,
-    #f6f1ec 49% 67%,
-    #b9c9b4 67% 84%,
-    #6b625b 84% 100%);
+    #b3472f 0 15%,
+    #f3f0dc 15% 31%,
+    #8c8303 31% 49%,
+    #f3f0dc 49% 67%,
+    #b8b484 67% 84%,
+    #5f5b49 84% 100%);
   box-shadow: 0 5px 0 rgba(31, 27, 24, 0.18);
 }
 
@@ -125,12 +125,12 @@
   width: 20px;
   height: 20px;
   margin: -10px 0 0 -10px;
-  border: 2px solid #1f1b18;
+  border: 2px solid #23282a;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.88);
   font-size: 0.62rem;
   font-weight: 700;
-  color: #1f1b18;
+  color: #23282a;
   z-index: 5;
 }
 
@@ -138,6 +138,9 @@
 .mg-arch__controls {
   display: grid;
   gap: 0.5rem;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .mg-arch__control {
@@ -146,18 +149,18 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.88rem;
-  color: #6b625b;
+  color: #5f5b49;
 }
 
 .mg-arch__control input[type="range"] {
   width: 100%;
-  accent-color: #8c3b2e;
+  accent-color: #8c8303;
 }
 
 .mg-arch__control output {
   font-variant-numeric: tabular-nums;
   text-align: right;
-  color: #1f1b18;
+  color: #23282a;
 }
 
 /* Протокол выстрелов. */
@@ -168,7 +171,7 @@
   padding: 0;
   list-style: none;
   font-size: 0.88rem;
-  color: #6b625b;
+  color: #5f5b49;
 }
 
 .mg-arch__log:empty {
@@ -177,13 +180,13 @@
 
 .mg-arch__log li {
   padding: 0.3rem 0.55rem;
-  border-left: 3px solid #d9d2cb;
+  border-left: 3px solid rgb(66 62 3 / 18%);
   background: #ffffff;
   border-radius: 0 8px 8px 0;
 }
 
 .mg-arch__log b {
-  color: #8c3b2e;
+  color: #8c8303;
 }
 
 @media (max-width: 600px) {

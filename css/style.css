@@ -1,5 +1,977 @@
 /* ==========================================================================
    style.css — общий стиль сайта «Народы России»
    Владелец: Иван.
-   Файл наполняется позже. Не редактировать без согласования с владельцем.
+
+   Визуальная система: кремовая бумага, оливковые холмы, тёмно-оливковые
+   акценты, крупная антиква в заголовках и геометрический гротеск в интерфейсе.
    ========================================================================== */
+
+:root {
+  /* Палитра */
+  --paper: #e2e0be;
+  --paper-light: #f3f0dc;
+  --paper-deep: #d3d0a4;
+  --olive: #8c8303;
+  --olive-dark: #595402;
+  --olive-deep: #423e03;
+  --ink: #23282a;
+  --ink-soft: #3a3f3b;
+  --muted: #5f5b49;
+  --white: #fffdf6;
+  --line: rgb(66 62 3 / 18%);
+  --line-strong: rgb(66 62 3 / 34%);
+
+  /* Типографика */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-ui: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Ubuntu", "Segoe UI", system-ui, sans-serif;
+
+  /* Формы и тени */
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --shadow-paper: 0 18px 40px rgb(35 40 42 / 12%);
+  --shadow-soft: 0 8px 24px rgb(35 40 42 / 8%);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--olive);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 3px solid var(--olive);
+  outline-offset: 3px;
+}
+
+/* Шапка ------------------------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 14px clamp(18px, 5vw, 56px);
+  background: rgb(226 224 190 / 88%);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--olive-deep);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-logo::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background: var(--olive);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 4px rgb(140 131 3 / 16%);
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s var(--ease), background-color .2s var(--ease);
+}
+
+.site-nav__link:hover {
+  color: var(--olive-deep);
+  background: rgb(255 253 246 / 55%);
+}
+
+.site-nav__link[aria-current="page"] {
+  color: var(--white);
+  background: var(--olive);
+}
+
+/* Подвал ----------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: clamp(56px, 8vw, 96px);
+  padding: 30px clamp(18px, 5vw, 56px);
+  background: var(--ink);
+  color: rgb(243 240 220 / 72%);
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+
+.site-footer p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.site-footer p::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--olive);
+}
+
+/* Общий каркас страниц --------------------------------------------------- */
+
+.site-main {
+  width: min(1180px, 100% - 40px);
+  margin: 0 auto;
+  padding: 46px 0 90px;
+}
+
+body .page-title {
+  margin: 0 0 16px;
+  color: var(--olive-deep);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: .98;
+  text-wrap: balance;
+}
+
+body .page-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 20px;
+  background: var(--olive);
+}
+
+body .page-intro {
+  max-width: 68ch;
+  margin: 0 0 34px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+}
+
+body .section-title {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+body .section-intro {
+  max-width: 68ch;
+  margin: 0 0 26px;
+  color: var(--muted);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--olive);
+}
+
+/* Кнопки ----------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  border: 1px solid var(--olive);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .25s var(--ease), border-color .25s var(--ease),
+    color .25s var(--ease), transform .25s var(--ease);
+}
+
+.button--solid {
+  background: var(--olive);
+  color: var(--white);
+}
+
+.button--solid:hover {
+  background: var(--olive-dark);
+  border-color: var(--olive-dark);
+  transform: translateY(-2px);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--olive-deep);
+}
+
+.button--ghost:hover {
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Главная: первый экран -------------------------------------------------- */
+
+.home-page .site-main {
+  padding-top: 0;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  min-height: min(760px, calc(100vh - 84px));
+  padding: clamp(40px, 7vw, 90px) 0 clamp(150px, 18vw, 230px);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__title {
+  margin: 0 0 24px;
+  color: var(--olive-deep);
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 9vw, 7.6rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: .86;
+}
+
+.hero__title span {
+  display: block;
+  color: var(--olive);
+}
+
+.hero__text {
+  max-width: 46ch;
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__facts strong {
+  color: var(--olive-dark);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero__facts span {
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Коллаж из полароидов --------------------------------------------------- */
+
+.hero__collage {
+  position: relative;
+  z-index: 1;
+  min-height: 560px;
+}
+
+.hero__halo {
+  position: absolute;
+  inset: 6% 2% 8% 6%;
+  border: 1px solid rgb(140 131 3 / 26%);
+  border-radius: 50% 50% 10% 10%;
+  background:
+    radial-gradient(circle at 50% 35%, rgb(243 240 220 / 72%), transparent 62%),
+    linear-gradient(180deg, rgb(184 180 132 / 26%), rgb(140 131 3 / 8%));
+}
+
+.hero__halo::before,
+.hero__halo::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgb(140 131 3 / 18%);
+  border-radius: 50%;
+}
+
+.hero__halo::before {
+  inset: 8%;
+}
+
+.hero__halo::after {
+  inset: 18%;
+}
+
+.polaroid {
+  position: absolute;
+  margin: 0;
+  padding: 10px 10px 46px;
+  background: var(--white);
+  border: 1px solid rgb(66 62 3 / 10%);
+  box-shadow: var(--shadow-paper);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: var(--paper-deep);
+}
+
+.polaroid figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 11px;
+  left: 14px;
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.polaroid--1 {
+  top: 0;
+  left: 2%;
+  z-index: 2;
+  width: 46%;
+  transform: rotate(-5deg);
+}
+
+.polaroid--2 {
+  top: 8%;
+  right: 0;
+  z-index: 3;
+  width: 40%;
+  padding-top: 36px;
+  transform: rotate(4deg);
+}
+
+.polaroid--2 figcaption {
+  top: 11px;
+  bottom: auto;
+}
+
+.polaroid--3 {
+  bottom: 0;
+  left: 47%;
+  z-index: 4;
+  width: 36%;
+  transform: rotate(-2deg);
+}
+
+.polaroid:hover {
+  z-index: 5;
+  box-shadow: 0 26px 50px rgb(35 40 42 / 18%);
+  transform: rotate(0) translateY(-6px) scale(1.02);
+}
+
+/* Холмы внизу первого экрана --------------------------------------------- */
+
+.hero__landscape {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: clamp(120px, 18vw, 220px);
+  pointer-events: none;
+}
+
+/* Народы Кузбасса --------------------------------------------------------- */
+
+.peoples {
+  position: relative;
+  padding-top: 8px;
+  scroll-margin-top: 88px;
+}
+
+.peoples__list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people-card {
+  grid-column: span 2;
+}
+
+.people-card:nth-child(-n + 2) {
+  grid-column: span 3;
+}
+
+.people-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+.people-card__link:hover {
+  box-shadow: var(--shadow-paper);
+  transform: translateY(-6px);
+}
+
+.people-card__media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+.people-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .5s var(--ease);
+}
+
+.people-card:nth-child(-n + 2) .people-card__media img {
+  aspect-ratio: 16 / 10;
+}
+
+.people-card__link:hover .people-card__media img {
+  transform: scale(1.04);
+}
+
+.people-card__number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 4px 12px rgb(35 40 42 / 15%);
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.people-card__badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgb(255 253 246 / 90%);
+  color: var(--olive-deep);
+  font-family: var(--font-ui);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.people-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px 22px;
+}
+
+.people-card__title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+
+.people-card__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.55;
+}
+
+.people-card__more {
+  margin-top: auto;
+  padding-top: 8px;
+  color: var(--olive-dark);
+  font-family: var(--font-ui);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* О проекте -------------------------------------------------------------- */
+
+.about {
+  margin-top: clamp(56px, 8vw, 96px);
+}
+
+.about__panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: clamp(24px, 4vw, 64px);
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--olive-deep);
+  border-radius: var(--radius-xl);
+  color: var(--paper);
+}
+
+.about__panel .eyebrow {
+  color: var(--paper-deep);
+}
+
+.about__panel .eyebrow::before {
+  background: var(--paper-deep);
+}
+
+.about__panel .section-title {
+  color: var(--white);
+}
+
+.about__panel p {
+  max-width: 62ch;
+  margin: 0;
+  color: rgb(243 240 220 / 78%);
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: start;
+}
+
+.about__links a {
+  display: inline-flex;
+  padding: 10px 16px;
+  border: 1px solid rgb(243 240 220 / 35%);
+  border-radius: 999px;
+  color: var(--paper);
+  font-family: var(--font-ui);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .25s var(--ease), color .25s var(--ease);
+}
+
+.about__links a:hover {
+  background: var(--paper);
+  color: var(--olive-deep);
+}
+
+.about__panel::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -80px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgb(243 240 220 / 18%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 30px rgb(243 240 220 / 6%),
+    0 0 0 60px rgb(243 240 220 / 4%);
+}
+
+/* Команда ---------------------------------------------------------------- */
+
+.team {
+  margin-top: clamp(56px, 8vw, 96px);
+}
+
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team__member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 18px 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.team__photo {
+  width: clamp(96px, 10vw, 132px);
+  aspect-ratio: 1;
+  margin: 0;
+  padding: 6px;
+  background: var(--paper-light);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.team__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team__body {
+  display: grid;
+  gap: 4px;
+}
+
+.team__name {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: .98rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.team__role {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Подпись к фотографиям народов ------------------------------------------ */
+
+.peoples__credits {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.55;
+}
+
+.peoples__credits a {
+  color: var(--olive-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.peoples__credits a:hover {
+  color: var(--olive);
+}
+
+/* Адаптивность ----------------------------------------------------------- */
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding-bottom: clamp(150px, 24vw, 210px);
+  }
+
+  .hero__collage {
+    min-height: 500px;
+    margin-top: 12px;
+  }
+
+  .peoples__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .people-card,
+  .people-card:nth-child(-n + 2) {
+    grid-column: span 1;
+  }
+
+  .people-card:first-child {
+    grid-column: span 2;
+  }
+
+  .people-card:first-child .people-card__media img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about__panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .team__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    gap: 8px 12px;
+    padding: 10px 14px;
+  }
+
+  .site-nav__list {
+    gap: 2px 2px;
+  }
+
+  .site-nav__link {
+    padding: 6px 7px;
+    font-size: .64rem;
+    letter-spacing: .05em;
+  }
+
+  .site-main {
+    width: calc(100% - 28px);
+    padding: 32px 0 64px;
+  }
+
+  .home-page .site-main {
+    padding-top: 0;
+  }
+
+  .hero {
+    padding-top: 36px;
+    padding-bottom: 150px;
+  }
+
+  .hero__title {
+    font-size: clamp(3.2rem, 18vw, 5.2rem);
+  }
+
+  .hero__facts {
+    gap: 20px;
+  }
+
+  .hero__collage {
+    min-height: 390px;
+  }
+
+  .polaroid {
+    padding: 8px 8px 42px;
+  }
+
+  .polaroid figcaption {
+    font-size: .56rem;
+    letter-spacing: .1em;
+  }
+
+  .polaroid--1 {
+    left: 0;
+    width: 48%;
+  }
+
+  .polaroid--2 {
+    width: 42%;
+    padding-top: 30px;
+  }
+
+  .polaroid--2 figcaption {
+    top: 8px;
+  }
+
+  .polaroid--3 {
+    left: 46%;
+    width: 38%;
+  }
+
+  .people-card:first-child {
+    grid-column: span 1;
+  }
+
+  .peoples__list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .people-card__media img,
+  .people-card:first-child .people-card__media img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about__panel {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .team__list {
+    gap: 12px;
+  }
+
+  .team__member {
+    gap: 12px;
+    padding: 18px 12px 16px;
+  }
+
+  .team__photo {
+    width: clamp(76px, 24vw, 104px);
+  }
+
+  .team__name {
+    font-size: .86rem;
+  }
+
+  .team__role {
+    font-size: .6rem;
+  }
+
+  .site-footer {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 340px) {
+  .site-nav__link {
+    padding: 6px 5px;
+    font-size: .58rem;
+    letter-spacing: .03em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .polaroid:hover,
+  .people-card__link:hover,
+  .button:hover {
+    transform: none;
+  }
+}

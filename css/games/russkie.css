@@ -14,11 +14,11 @@
   justify-content: space-between;
   gap: 0.4rem 1rem;
   font-size: 0.88rem;
-  color: #6b625b;
+  color: #5f5b49;
 }
 
 .mg-gor__info b {
-  color: #1f1b18;
+  color: #23282a;
   font-variant-numeric: tabular-nums;
 }
 
@@ -26,7 +26,7 @@
 .mg-gor__field {
   position: relative;
   height: 240px;
-  border: 1px solid #d9d2cb;
+  border: 1px solid rgb(66 62 3 / 18%);
   border-radius: 12px;
   overflow: hidden;
   background: linear-gradient(to bottom, #e7efe4 0 72%, #d8c9b6 72% 100%);
@@ -75,7 +75,7 @@
   width: 30px;
   height: 30px;
   margin: -15px 0 0 -15px;
-  border: 2px solid #8c3b2e;
+  border: 2px solid #8c8303;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0.8;
@@ -86,7 +86,7 @@
 .mg-gor__aim::after {
   content: "";
   position: absolute;
-  background: #8c3b2e;
+  background: #8c8303;
 }
 
 .mg-gor__aim::before {
@@ -124,7 +124,7 @@
   position: relative;
   height: 0.7rem;
   border-radius: 999px;
-  background: #e2d8ce;
+  background: #d8d4b0;
   overflow: hidden;
 }
 
@@ -144,7 +144,7 @@
   display: block;
   width: 0;
   height: 100%;
-  background: #8c3b2e;
+  background: #8c8303;
   transition: width 0.04s linear;
 }
 
