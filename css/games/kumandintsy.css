@@ -1,0 +1,195 @@
+/* ==========================================================================
+   games/kumandintsy.css — игра «Кажык өрө чачары» (кумандинцы).
+   Все правила с префиксом .mg-kz, файл можно удалить целиком.
+   ========================================================================== */
+
+.mg-kz {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mg-kz__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: #5f5b49;
+}
+
+.mg-kz__info b {
+  color: #24394a;
+  font-size: 1.05rem;
+}
+
+/* Поле: светлая кошма на голубой подкладке. */
+.mg-kz__field {
+  position: relative;
+  height: clamp(300px, 34vw, 430px);
+  border: 1px solid rgb(66 62 3 / 18%);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 50% 62%, #f4e8cd 0 54%, transparent 55%),
+    repeating-linear-gradient(90deg, rgb(47 93 124 / 5%) 0 2px, transparent 2px 24px),
+    #e3ecef;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.mg-kz__bones {
+  position: absolute;
+  inset: 0;
+}
+
+.mg-kz__bone,
+.mg-kz__toss {
+  position: absolute;
+  width: 74px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.mg-kz__bone {
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  cursor: default;
+}
+
+.mg-kz__bone:nth-child(1) {
+  left: 24%;
+  top: 64%;
+  --r: -16deg;
+}
+
+.mg-kz__bone:nth-child(2) {
+  left: 43%;
+  top: 74%;
+  --r: 8deg;
+}
+
+.mg-kz__bone:nth-child(3) {
+  left: 64%;
+  top: 62%;
+  --r: -6deg;
+}
+
+.mg-kz__bone:nth-child(4) {
+  left: 34%;
+  top: 36%;
+  --r: 20deg;
+}
+
+.mg-kz__bone:nth-child(5) {
+  left: 67%;
+  top: 34%;
+  --r: -24deg;
+}
+
+/* Костяная бабка: светлая, с цветными точками. */
+.mg-kz__bone::before,
+.mg-kz__toss::before {
+  content: "";
+  position: absolute;
+  inset: 4px 2px;
+  border: 2px solid #24394a;
+  border-radius: 46% 46% 44% 44% / 58% 58% 42% 42%;
+  background:
+    radial-gradient(circle at 34% 46%, #b0523a 0 3px, transparent 3.5px),
+    radial-gradient(circle at 52% 62%, #2f5d7c 0 3px, transparent 3.5px),
+    radial-gradient(circle at 68% 40%, #c79a45 0 3px, transparent 3.5px),
+    #f4e6c4;
+  box-shadow: 0 4px 8px rgb(36 57 74 / 16%);
+}
+
+.mg-kz.is-air .mg-kz__bone {
+  cursor: pointer;
+}
+
+.mg-kz.is-air .mg-kz__bone::before {
+  box-shadow: 0 0 0 3px rgb(176 82 58 / 20%), 0 4px 8px rgb(36 57 74 / 16%);
+}
+
+.mg-kz.is-air .mg-kz__bone:hover {
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1.12);
+}
+
+.mg-kz.is-air .mg-kz__bone:hover::before {
+  border-color: #b0523a;
+}
+
+.mg-kz__bone:focus-visible {
+  outline: 2px solid #b0523a;
+  outline-offset: 1px;
+  border-radius: 10px;
+}
+
+.mg-kz__bone.is-taken {
+  opacity: 0.16;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.8);
+}
+
+/* Подброшенная кость. */
+.mg-kz__toss {
+  left: 50%;
+  bottom: 14px;
+  margin-left: -37px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transform-origin: 50% 60%;
+  transition: opacity 0.12s ease;
+}
+
+.mg-kz__toss::before {
+  inset: 3px 0;
+  background:
+    radial-gradient(circle at 32% 44%, #c79a45 0 3px, transparent 3.5px),
+    radial-gradient(circle at 50% 62%, #b0523a 0 3px, transparent 3.5px),
+    radial-gradient(circle at 68% 42%, #2f5d7c 0 3px, transparent 3.5px),
+    #f8edd2;
+}
+
+.mg-kz__toss.is-flying {
+  opacity: 1;
+}
+
+.mg-kz__hint {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: #b0523a;
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.mg-kz.is-air .mg-kz__hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .mg-kz__field {
+    height: 340px;
+  }
+
+  .mg-kz__bone,
+  .mg-kz__toss {
+    width: 58px;
+    height: 38px;
+  }
+
+  .mg-kz__toss {
+    margin-left: -29px;
+  }
+}

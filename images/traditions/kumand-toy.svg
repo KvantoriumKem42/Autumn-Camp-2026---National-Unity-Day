@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Костяные игрушки-кажыки</title>
+  <rect width="400" height="300" rx="18" fill="#f1ece0"/>
+  <ellipse cx="200" cy="258" rx="120" ry="12" fill="#24394a" opacity=".07"/>
+  <ellipse cx="144" cy="202" rx="46" ry="10" fill="#24394a" opacity=".08"/>
+  <ellipse cx="240" cy="188" rx="46" ry="10" fill="#24394a" opacity=".08"/>
+  <ellipse cx="196" cy="242" rx="46" ry="10" fill="#24394a" opacity=".08"/>
+  <g transform="translate(144 176) rotate(-14)">
+    <path d="M-26 -14 C-26 -21 -18 -24 -9 -20 C-4 -18 4 -18 9 -20 C18 -24 26 -21 26 -14 L26 14 C26 21 18 24 9 20 C4 18 -4 18 -9 20 C-18 24 -26 21 -26 14 Z" fill="#f4e6c4" stroke="#24394a" stroke-width="2.5"/>
+    <circle cx="-11" cy="-2" r="3" fill="#b0523a"/>
+    <circle cx="1" cy="4" r="3" fill="#2f5d7c"/>
+    <circle cx="12" cy="-3" r="3" fill="#c79a45"/>
+  </g>
+  <g transform="translate(242 162) rotate(10)">
+    <path d="M-26 -14 C-26 -21 -18 -24 -9 -20 C-4 -18 4 -18 9 -20 C18 -24 26 -21 26 -14 L26 14 C26 21 18 24 9 20 C4 18 -4 18 -9 20 C-18 24 -26 21 -26 14 Z" fill="#f4e6c4" stroke="#24394a" stroke-width="2.5"/>
+    <circle cx="-11" cy="-2" r="3" fill="#2f5d7c"/>
+    <circle cx="1" cy="4" r="3" fill="#b0523a"/>
+    <circle cx="12" cy="-3" r="3" fill="#2f5d7c"/>
+  </g>
+  <g transform="translate(198 222) rotate(-4)">
+    <path d="M-26 -14 C-26 -21 -18 -24 -9 -20 C-4 -18 4 -18 9 -20 C18 -24 26 -21 26 -14 L26 14 C26 21 18 24 9 20 C4 18 -4 18 -9 20 C-18 24 -26 21 -26 14 Z" fill="#f4e6c4" stroke="#24394a" stroke-width="2.5"/>
+    <circle cx="-11" cy="-2" r="3" fill="#c79a45"/>
+    <circle cx="1" cy="4" r="3" fill="#b0523a"/>
+    <circle cx="12" cy="-3" r="3" fill="#2f5d7c"/>
+  </g>
+  <g fill="#c79a45">
+    <circle cx="92" cy="120" r="3"/>
+    <circle cx="310" cy="128" r="3"/>
+    <circle cx="318" cy="228" r="3"/>
+    <circle cx="86" cy="238" r="3"/>
+  </g>
+</svg>

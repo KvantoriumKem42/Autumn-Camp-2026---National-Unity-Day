@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/games.css">
   <link rel="stylesheet" href="css/games/shorsy.css">
   <link rel="stylesheet" href="css/games/teleuty.css">
+  <link rel="stylesheet" href="css/games/kumandintsy.css">
   <link rel="stylesheet" href="css/games/kalmaki.css">
   <link rel="stylesheet" href="css/games/sibirskie-tatary.css">
   <link rel="stylesheet" href="css/games/russkie.css">
@@ -29,7 +30,7 @@
 
   <main class="site-main">
     <h1 class="page-title">Народные игры</h1>
-    <p class="page-intro">Пять народов Кузбасса — пять игр. Выберите народ и сыграйте в его традиционную забаву.</p>
+    <p class="page-intro">Шесть народов Кузбасса — шесть игр. Выберите народ и сыграйте в его традиционную забаву.</p>
 
     <section class="mg" aria-labelledby="mg-heading">
       <h2 class="section-title" id="mg-heading">Игры народов Кузбасса</h2>
@@ -37,6 +38,7 @@
       <nav class="mg__tabs" aria-label="Выбор народа">
         <a class="mg__tab" href="#shortsy">Шорцы</a>
         <a class="mg__tab" href="#teleuty">Телеуты</a>
+        <a class="mg__tab" href="#kumandintsy">Кумандинцы</a>
         <a class="mg__tab" href="#kalmaki">Калмаки</a>
         <a class="mg__tab" href="#sibirskie-tatary">Сибирские татары</a>
         <a class="mg__tab" href="#russkie">Русские</a>
@@ -134,6 +136,52 @@
 
                 <p class="mg__status" data-status role="status">Выстрелов осталось: 3.</p>
                 <ol class="mg-arch__log" data-log aria-label="Результаты выстрелов"></ol>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="mg__panel" id="kumandintsy">
+          <header class="mg__head">
+            <h3 class="mg__name">Кумандинцы</h3>
+            <p class="mg__game">Кажык өрө чачары</p>
+          </header>
+
+          <div class="mg__layout">
+            <div class="mg__about">
+              <h4 class="mg__subtitle">Правила</h4>
+              <p>«Кажык өрө чачары» — подбрасывание костей. Играют костяными бабками — кажыками. Кости кладут на землю или на стол, одну подбрасывают вверх. Пока она летит, игрок подхватывает с земли ещё несколько костей, а потом ловит падающую. Ловить можно только одной рукой, и в воздухе при этом должно оказаться не меньше двух костей. Игра общая для алтайских народов: её знают кумандинцы, алтайцы и телеуты.</p>
+
+              <h4 class="mg__subtitle">Как играть</h4>
+              <p>Жми «Подбросить» или пробел. Пока кость в воздухе, кликай по кажыкам на поле: каждый даёт очко. Не забудь поймать падающую кость — для этого нажми «Поймать». Не успел — бросок сгорает. Пять бросков, и с каждым разом кость летит всё быстрее.</p>
+            </div>
+
+            <div class="mg__stage">
+              <div class="mg-kz" data-game="kumandintsy">
+                <div class="mg-kz__info">
+                  <span>Броски: <b data-throws>5</b></span>
+                  <span>Поймано: <b data-score>0</b></span>
+                  <span>В руке: <b data-taken>0</b></span>
+                </div>
+
+                <div class="mg-kz__field" data-field>
+                  <div class="mg-kz__bones" data-bones>
+                    <button class="mg-kz__bone" type="button" data-bone aria-label="Взять кажык"></button>
+                    <button class="mg-kz__bone" type="button" data-bone aria-label="Взять кажык"></button>
+                    <button class="mg-kz__bone" type="button" data-bone aria-label="Взять кажык"></button>
+                    <button class="mg-kz__bone" type="button" data-bone aria-label="Взять кажык"></button>
+                    <button class="mg-kz__bone" type="button" data-bone aria-label="Взять кажык"></button>
+                  </div>
+                  <span class="mg-kz__toss" data-toss aria-hidden="true"></span>
+                  <span class="mg-kz__hint">Кость в воздухе</span>
+                </div>
+
+                <p class="mg__status" data-status role="status">Нажми «Подбросить» — и собирай кажыки, пока кость летит.</p>
+
+                <div class="mg__actions">
+                  <button class="mg__btn" type="button" data-toss-btn>Подбросить</button>
+                  <button class="mg__btn mg__btn--ghost" type="button" data-reset hidden>Ещё раз</button>
+                </div>
               </div>
             </div>
           </div>
@@ -249,10 +297,10 @@
           <div class="mg__layout">
             <div class="mg__about">
               <h4 class="mg__subtitle">Правила</h4>
-              <p>Городки — старинная игра, в которой с определённого расстояния выбивают деревянные фигуры, «городки», специальной битой. Фигуру складывают из шести дощечек.</p>
+              <p>Городки — старинная игра, в которой с определённого расстояния выбивают деревянные фигуры, «городки», специальной битой. Фигуру складывают из пяти рюх.</p>
 
               <h4 class="mg__subtitle">Как играть</h4>
-              <p>Кликни левой кнопкой по фигуре, когда шкала силы окажется в зелёной зоне. Чем ближе прицел к центру фигуры, тем больше дощечек упадёт. Пять бит и пять разных расстановок: сбей все шесть дощечек.</p>
+              <p>Кликни левой кнопкой по фигуре, когда шкала силы окажется в зелёной зоне. Чем ближе прицел к центру фигуры, тем больше рюх упадёт. Пять бит и пять разных расстановок: сбей все пять рюх.</p>
             </div>
 
             <div class="mg__stage">
@@ -260,13 +308,12 @@
                 <div class="mg-gor__info">
                   <span>Биты: <b data-bats>5</b></span>
                   <span>Фигура: <b data-figure-name>—</b></span>
-                  <span>Сбито дощечек: <b data-score>0</b> из 6</span>
+                  <span>Сбито рюх: <b data-score>0</b> из 5</span>
                 </div>
 
                 <div class="mg-gor__field" data-field tabindex="0" aria-label="Поле для городков. Кликни по фигуре, чтобы бросить биту">
                   <span class="mg-gor__aim" data-aim aria-hidden="true"></span>
                   <div class="mg-gor__figure" data-figure aria-hidden="true">
-                    <span class="mg-gor__block"></span>
                     <span class="mg-gor__block"></span>
                     <span class="mg-gor__block"></span>
                     <span class="mg-gor__block"></span>
@@ -300,6 +347,7 @@
 
   <script src="js/games/shorsy.js"></script>
   <script src="js/games/teleuty.js"></script>
+  <script src="js/games/kumandintsy.js"></script>
   <script src="js/games/kalmaki.js"></script>
   <script src="js/games/sibirskie-tatary.js"></script>
   <script src="js/games/russkie.js"></script>

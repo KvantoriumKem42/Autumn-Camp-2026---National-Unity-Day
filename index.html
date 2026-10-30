@@ -1,242 +1,437 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Коренные народы Кузбасса — культура, традиции, кухня, история и народные игры.">
-  <title>Коренные народы Кузбасса — Главная</title>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="home-page">
-  <header class="site-header">
-    <a class="site-logo" href="index.html">Коренные народы Кузбасса</a>
-    <nav class="site-nav" aria-label="Основная навигация">
-      <ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html" aria-current="page">Главная</a></li>
-        <li><a class="site-nav__link" href="traditions.html">Традиции</a></li>
-        <li><a class="site-nav__link" href="cuisine.html">Кухня</a></li>
-        <li><a class="site-nav__link" href="history.html">История</a></li>
-        <li><a class="site-nav__link" href="games.html">Игры</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="site-main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__content">
-        <p class="eyebrow">Кузбасс · культурное наследие</p>
-        <h1 class="hero__title" id="hero-title">Коренные <span>народы Кузбасса</span></h1>
-        <p class="hero__text">История, традиции, кухня и игры коренных народов Кузбасса — в одном проекте.</p>
-        <div class="hero__actions">
-          <a class="button button--solid" href="#peoples">Познакомиться</a>
-          <a class="button button--ghost" href="games.html">Играть</a>
-        </div>
-        <ul class="hero__facts">
-          <li><strong>5</strong><span>народов</span></li>
-          <li><strong>4</strong><span>раздела</span></li>
-          <li><strong>1</strong><span>общая земля</span></li>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Коренные народы Кузбасса — культура, традиции, кухня, история и народные игры."
+    />
+    <title>Коренные народы Кузбасса — Главная</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body class="home-page">
+    <header class="site-header">
+      <a class="site-logo" href="index.html">Коренные народы Кузбасса</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li>
+            <a class="site-nav__link" href="index.html" aria-current="page"
+              >Главная</a
+            >
+          </li>
+          <li><a class="site-nav__link" href="traditions.html">Традиции</a></li>
+          <li><a class="site-nav__link" href="cuisine.html">Кухня</a></li>
+          <li><a class="site-nav__link" href="history.html">История</a></li>
+          <li><a class="site-nav__link" href="games.html">Игры</a></li>
         </ul>
-      </div>
+      </nav>
+    </header>
 
-      <div class="hero__collage">
-        <div class="hero__halo" aria-hidden="true"></div>
-        <figure class="polaroid polaroid--1">
-          <img src="images/people/shorsy.jpg" alt="Шорцы" width="1200" height="900">
-          <figcaption>Шорцы · Горная Шория</figcaption>
-        </figure>
-        <figure class="polaroid polaroid--2">
-          <img src="images/people/teleuty.jpg" alt="Телеуты" width="1200" height="900">
-          <figcaption>Телеуты · Беково</figcaption>
-        </figure>
-        <figure class="polaroid polaroid--3">
-          <img src="images/people/kalmaki.jpg" alt="Калмаки" width="1200" height="900">
-          <figcaption>Калмаки · Юрты-Константиновы</figcaption>
-        </figure>
-      </div>
-
-      <svg class="hero__landscape" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-        <defs>
-          <symbol id="pine" viewBox="0 0 40 70">
-            <path d="M20 0 L34 26 H26 L38 48 H22 V70 H18 V48 H2 L14 26 H6 Z"/>
-          </symbol>
-        </defs>
-        <path fill="#c9c79f" d="M0 190 C180 120 340 150 520 190 C700 230 860 150 1040 160 C1220 170 1340 210 1440 190 L1440 260 L0 260 Z"/>
-        <path fill="#b8b484" d="M0 218 C160 170 300 190 460 218 C620 246 780 190 960 200 C1140 210 1300 240 1440 220 L1440 260 L0 260 Z"/>
-        <path fill="#8c8303" d="M0 240 C200 210 360 230 540 244 C720 258 900 220 1080 226 C1260 232 1360 248 1440 242 L1440 260 L0 260 Z"/>
-        <path fill="#595402" d="M0 252 C240 240 420 250 600 256 C800 262 1000 244 1200 248 C1320 250 1400 256 1440 254 L1440 260 L0 260 Z"/>
-        <g fill="#23282a" opacity=".82">
-          <use href="#pine" x="110" y="176" width="30" height="52"/>
-          <use href="#pine" x="210" y="160" width="38" height="66"/>
-          <use href="#pine" x="320" y="182" width="26" height="46"/>
-          <use href="#pine" x="470" y="170" width="34" height="60"/>
-          <use href="#pine" x="620" y="184" width="28" height="50"/>
-          <use href="#pine" x="780" y="164" width="36" height="64"/>
-          <use href="#pine" x="930" y="180" width="30" height="52"/>
-          <use href="#pine" x="1080" y="168" width="34" height="60"/>
-          <use href="#pine" x="1220" y="182" width="28" height="50"/>
-          <use href="#pine" x="1340" y="174" width="32" height="56"/>
-        </g>
-      </svg>
-    </section>
-
-    <section class="peoples" id="peoples" aria-labelledby="peoples-title">
-      <p class="eyebrow">01 · Народы</p>
-      <h2 class="section-title" id="peoples-title">Народы Кузбасса</h2>
-      <p class="section-intro">Пять культур, которые складывались веками рядом друг с другом. Выберите народ, чтобы пройти по его истории, традициям и повседневности.</p>
-
-      <ul class="peoples__list">
-        <li class="people-card" id="shortsy">
-          <a class="people-card__link" href="history.html#shortsy">
-            <figure class="people-card__media">
-              <img src="images/people/shorsy.jpg" alt="Шорцы" width="1200" height="900" loading="lazy">
-              <span class="people-card__number" aria-hidden="true">01</span>
-              <span class="people-card__badge">Горная Шория</span>
-            </figure>
-            <div class="people-card__body">
-              <h3 class="people-card__title">Шорцы</h3>
-              <p class="people-card__text">Коренной малочисленный народ Горной Шории, хранитель традиций таёжной культуры.</p>
-              <span class="people-card__more">История народа <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </li>
-
-        <li class="people-card" id="teleuty">
-          <a class="people-card__link" href="history.html#teleuty">
-            <figure class="people-card__media">
-              <img src="images/people/teleuty.jpg" alt="Телеуты" width="1200" height="900" loading="lazy">
-              <span class="people-card__number" aria-hidden="true">02</span>
-              <span class="people-card__badge">Беково</span>
-            </figure>
-            <div class="people-card__body">
-              <h3 class="people-card__title">Телеуты</h3>
-              <p class="people-card__text">Коренной малочисленный народ Кузбасса с традициями скотоводства и кочевой культуры.</p>
-              <span class="people-card__more">История народа <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </li>
-
-        <li class="people-card" id="kalmaki">
-          <a class="people-card__link" href="history.html#kalmaki">
-            <figure class="people-card__media">
-              <img src="images/people/kalmaki.jpg" alt="Калмаки" width="1200" height="900" loading="lazy">
-              <span class="people-card__number" aria-hidden="true">03</span>
-              <span class="people-card__badge">Юрты-Константиновы</span>
-            </figure>
-            <div class="people-card__body">
-              <h3 class="people-card__title">Калмаки</h3>
-              <p class="people-card__text">Малочисленная группа, проживающая в Юргинском районе Кемеровской области.</p>
-              <span class="people-card__more">История народа <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </li>
-
-        <li class="people-card" id="sibirskie-tatary">
-          <a class="people-card__link" href="history.html#sibirskie-tatary">
-            <figure class="people-card__media">
-              <img src="images/people/sibirskie-tatary.jpg" alt="Сибирские татары" width="1200" height="900" loading="lazy">
-              <span class="people-card__number" aria-hidden="true">04</span>
-              <span class="people-card__badge">Кузбасс</span>
-            </figure>
-            <div class="people-card__body">
-              <h3 class="people-card__title">Сибирские татары</h3>
-              <p class="people-card__text">Тюркский народ, проживающий в Кузбассе и сохраняющий свой язык и обычаи.</p>
-              <span class="people-card__more">История народа <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </li>
-
-        <li class="people-card" id="russkie">
-          <a class="people-card__link" href="history.html#russkie">
-            <figure class="people-card__media">
-              <img src="images/people/russkie.jpg" alt="Русские" width="1200" height="900" loading="lazy">
-              <span class="people-card__number" aria-hidden="true">05</span>
-              <span class="people-card__badge">Кузбасс</span>
-            </figure>
-            <div class="people-card__body">
-              <h3 class="people-card__title">Русские</h3>
-              <p class="people-card__text">Самый многочисленный народ региона, чьи традиции во многом определили облик Кузбасса.</p>
-              <span class="people-card__more">История народа <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-      <p class="peoples__credits">
-        Фотографии:
-        <a href="https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%BD%D0%BE-%D1%8D%D1%82%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%A8%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%BB%D1%83%D1%81_%D0%9A%D0%B5%D0%B7%D0%B5%D0%BA%C2%BB.jpg" target="_blank" rel="noopener">Шорский улус Кезек</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC%D1%8B_%D1%82%D0%B5%D0%BB%D0%B5%D1%83%D1%82%D0%BE%D0%B2.jpg" target="_blank" rel="noopener">телеутские костюмы</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:Kalmak_archer.jpg" target="_blank" rel="noopener">калмакский лучник</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:Siberian_Tatars.jpg" target="_blank" rel="noopener">сибирские татары</a>,
-        <a href="https://commons.wikimedia.org/wiki/File:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC,_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D1%86%D0%B0_%D0%B0%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8F_%22%D0%92%D0%B5%D1%80%D0%B5%D1%81%D0%B5%D0%BD%D1%8C%22.jpg" target="_blank" rel="noopener">русский народный костюм</a>.
-        Материалы Wikimedia Commons, лицензии CC BY / CC BY-SA и общественное достояние.
-      </p>
-    </section>
-
-    <section class="about" aria-labelledby="about-title">
-      <div class="about__panel">
-        <div>
-          <p class="eyebrow">02 · О проекте</p>
-          <h2 class="section-title" id="about-title">О проекте</h2>
-          <p>Сайт знакомит с традициями, кухней, историей и народными играми народов, проживающих в Кузбассе. Мы собираем материал о пяти культурах, которые веками живут рядом на одной земле.</p>
+    <main class="site-main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow">Кузбасс · культурное наследие</p>
+          <h1 class="hero__title" id="hero-title">
+            Коренные <span>народы Кузбасса</span>
+          </h1>
+          <p class="hero__text">
+            История, традиции, кухня и игры коренных народов Кузбасса — в одном
+            проекте.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--solid" href="#peoples">Познакомиться</a>
+            <a class="button button--ghost" href="games.html">Играть</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong>6</strong><span>народов</span></li>
+            <li><strong>4</strong><span>раздела</span></li>
+            <li><strong>1</strong><span>общая земля</span></li>
+          </ul>
         </div>
-        <div class="about__links" aria-label="Разделы сайта">
-          <a href="traditions.html">Традиции</a>
-          <a href="cuisine.html">Кухня</a>
-          <a href="history.html">История</a>
-          <a href="games.html">Игры</a>
+
+        <div class="hero__collage">
+          <div class="hero__halo" aria-hidden="true"></div>
+          <figure class="polaroid polaroid--1">
+            <img
+              src="images/people/shorsy.jpg"
+              alt="Шорцы"
+              width="1200"
+              height="900"
+            />
+            <figcaption>Шорцы · Горная Шория</figcaption>
+          </figure>
+          <figure class="polaroid polaroid--2">
+            <img
+              src="images/people/teleuty.jpg"
+              alt="Телеуты"
+              width="1200"
+              height="900"
+            />
+            <figcaption>Телеуты · Беково</figcaption>
+          </figure>
+          <figure class="polaroid polaroid--3">
+            <img
+              src="images/people/kalmaki.jpg"
+              alt="Калмаки"
+              width="1200"
+              height="900"
+            />
+            <figcaption>Калмаки · Юрты-Константиновы</figcaption>
+          </figure>
         </div>
-      </div>
-    </section>
 
-    <section class="team" aria-labelledby="team-title">
-      <p class="eyebrow">03 · Команда</p>
-      <h2 class="section-title" id="team-title">Над проектом работали</h2>
-      <p class="section-intro">Сайт собрали участники летнего лагеря: исследовали материал, писали тексты, рисовали иллюстрации и программировали игры.</p>
+        <svg
+          class="hero__landscape"
+          viewBox="0 0 1440 260"
+          preserveAspectRatio="xMidYMax slice"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <symbol id="pine" viewBox="0 0 40 70">
+              <path
+                d="M20 0 L34 26 H26 L38 48 H22 V70 H18 V48 H2 L14 26 H6 Z"
+              />
+            </symbol>
+          </defs>
+          <path
+            fill="#c9c79f"
+            d="M0 190 C180 120 340 150 520 190 C700 230 860 150 1040 160 C1220 170 1340 210 1440 190 L1440 260 L0 260 Z"
+          />
+          <path
+            fill="#b8b484"
+            d="M0 218 C160 170 300 190 460 218 C620 246 780 190 960 200 C1140 210 1300 240 1440 220 L1440 260 L0 260 Z"
+          />
+          <path
+            fill="#8c8303"
+            d="M0 240 C200 210 360 230 540 244 C720 258 900 220 1080 226 C1260 232 1360 248 1440 242 L1440 260 L0 260 Z"
+          />
+          <path
+            fill="#595402"
+            d="M0 252 C240 240 420 250 600 256 C800 262 1000 244 1200 248 C1320 250 1400 256 1440 254 L1440 260 L0 260 Z"
+          />
+          <g fill="#23282a" opacity=".82">
+            <use href="#pine" x="110" y="176" width="30" height="52" />
+            <use href="#pine" x="210" y="160" width="38" height="66" />
+            <use href="#pine" x="320" y="182" width="26" height="46" />
+            <use href="#pine" x="470" y="170" width="34" height="60" />
+            <use href="#pine" x="620" y="184" width="28" height="50" />
+            <use href="#pine" x="780" y="164" width="36" height="64" />
+            <use href="#pine" x="930" y="180" width="30" height="52" />
+            <use href="#pine" x="1080" y="168" width="34" height="60" />
+            <use href="#pine" x="1220" y="182" width="28" height="50" />
+            <use href="#pine" x="1340" y="174" width="32" height="56" />
+          </g>
+        </svg>
+      </section>
 
-      <ul class="team__list">
-        <li class="team__member">
-          <figure class="team__photo">
-            <img src="images/team/nurgazin.jpg" alt="Нургазин Иван Вячеславович" width="800" height="800" loading="lazy">
-          </figure>
-          <div class="team__body">
-            <p class="team__name">Нургазин Иван Вячеславович</p>
-            <p class="team__role">Педагог, руководитель проекта</p>
-          </div>
-        </li>
-        <li class="team__member">
-          <figure class="team__photo">
-            <img src="images/team/dev-1.jpg" alt="Рычков Дмитрий Васильевич" width="800" height="800" loading="lazy">
-          </figure>
-          <div class="team__body">
-            <p class="team__name">Рычков Дмитрий Васильевич</p>
-            <p class="team__role">Разработчик</p>
-          </div>
-        </li>
-        <li class="team__member">
-          <figure class="team__photo">
-            <img src="images/team/dev-2.jpg" alt="Швец Марк Игоревич" width="800" height="800" loading="lazy">
-          </figure>
-          <div class="team__body">
-            <p class="team__name">Швец Марк Игоревич</p>
-            <p class="team__role">Разработчик</p>
-          </div>
-        </li>
-        <li class="team__member">
-          <figure class="team__photo">
-            <img src="images/team/dev-3.jpg" alt="Шофинец Егор Денисович" width="800" height="800" loading="lazy">
-          </figure>
-          <div class="team__body">
-            <p class="team__name">Шофинец Егор Денисович</p>
-            <p class="team__role">Разработчик</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-  </main>
+      <section class="peoples" id="peoples" aria-labelledby="peoples-title">
+        <p class="eyebrow">01 · Народы</p>
+        <h2 class="section-title" id="peoples-title">Народы Кузбасса</h2>
+        <p class="section-intro">
+          Шесть культур, которые складывались веками рядом друг с другом.
+          Выберите народ, чтобы пройти по его истории, традициям и
+          повседневности.
+        </p>
 
-  <footer class="site-footer">
-    <p>© 2026. Проект «Коренные народы Кузбасса».</p>
-  </footer>
-</body>
+        <ul class="peoples__list">
+          <li class="people-card" id="shortsy">
+            <a class="people-card__link" href="history.html#shortsy">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/shorsy.jpg"
+                  alt="Шорцы"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">01</span>
+                <span class="people-card__badge">Горная Шория</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Шорцы</h3>
+                <p class="people-card__text">
+                  Коренной малочисленный народ Горной Шории, хранитель традиций
+                  таёжной культуры.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="people-card" id="teleuty">
+            <a class="people-card__link" href="history.html#teleuty">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/teleuty.jpg"
+                  alt="Телеуты"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">02</span>
+                <span class="people-card__badge">Беково</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Телеуты</h3>
+                <p class="people-card__text">
+                  Коренной малочисленный народ Кузбасса с традициями
+                  скотоводства и кочевой культуры.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="people-card" id="kumandintsy">
+            <a class="people-card__link" href="history.html#kumandintsy">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/kumandintsy.jpg"
+                  alt="Таштагол — город, где живёт часть кумандинцев"
+                  width="1024"
+                  height="768"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">03</span>
+                <span class="people-card__badge">Таштагольский район</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Кумандинцы</h3>
+                <p class="people-card__text">
+                  Коренной малочисленный народ, живущий на юге Кузбасса, в
+                  Таштагольском районе и городах Горной Шории.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="people-card" id="kalmaki">
+            <a class="people-card__link" href="history.html#kalmaki">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/kalmaki.jpg"
+                  alt="Калмаки"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">04</span>
+                <span class="people-card__badge">Юрты-Константиновы</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Калмаки</h3>
+                <p class="people-card__text">
+                  Этнографическая группа сибирских татар в Юргинском и Яшкинском
+                  районах Кузбасса.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="people-card" id="sibirskie-tatary">
+            <a class="people-card__link" href="history.html#sibirskie-tatary">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/sibirskie-tatary.jpg"
+                  alt="Сибирские татары"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">05</span>
+                <span class="people-card__badge">Кузбасс</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Сибирские татары</h3>
+                <p class="people-card__text">
+                  Группа татарского народа, потомки тюркского населения Западной
+                  Сибири.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="people-card" id="russkie">
+            <a class="people-card__link" href="history.html#russkie">
+              <figure class="people-card__media">
+                <img
+                  src="images/people/russkie.jpg"
+                  alt="Русские"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                />
+                <span class="people-card__number" aria-hidden="true">06</span>
+                <span class="people-card__badge">Кузбасс</span>
+              </figure>
+              <div class="people-card__body">
+                <h3 class="people-card__title">Русские</h3>
+                <p class="people-card__text">
+                  Самый многочисленный народ региона, чьи традиции во многом
+                  определили облик Кузбасса.
+                </p>
+                <span class="people-card__more"
+                  >История народа <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <p class="peoples__credits">
+          Фотографии:
+          <a
+            href="https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%BD%D0%BE-%D1%8D%D1%82%D0%BD%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%C2%AB%D0%A8%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%BB%D1%83%D1%81_%D0%9A%D0%B5%D0%B7%D0%B5%D0%BA%C2%BB.jpg"
+            target="_blank"
+            rel="noopener"
+            >Шорский улус Кезек</a
+          >,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC%D1%8B_%D1%82%D0%B5%D0%BB%D0%B5%D1%83%D1%82%D0%BE%D0%B2.jpg"
+            target="_blank"
+            rel="noopener"
+            >телеутские костюмы</a
+          >,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Tashtagol_-_view_on_Ust-Shalym_microdistrict_from_tv-tower.jpg"
+            target="_blank"
+            rel="noopener"
+            >Таштагол</a
+          >,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Kalmak_archer.jpg"
+            target="_blank"
+            rel="noopener"
+            >калмакский лучник</a
+          >,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Siberian_Tatars.jpg"
+            target="_blank"
+            rel="noopener"
+            >сибирские татары</a
+          >,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC,_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D1%86%D0%B0_%D0%B0%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8F_%22%D0%92%D0%B5%D1%80%D0%B5%D1%81%D0%B5%D0%BD%D1%8C%22.jpg"
+            target="_blank"
+            rel="noopener"
+            >русский народный костюм</a
+          >. Материалы Wikimedia Commons, лицензии CC BY / CC BY-SA и
+          общественное достояние.
+        </p>
+      </section>
+
+      <section class="about" aria-labelledby="about-title">
+        <div class="about__panel">
+          <div>
+            <p class="eyebrow">02 · О проекте</p>
+            <h2 class="section-title" id="about-title">О проекте</h2>
+            <p>
+              Сайт знакомит с традициями, кухней, историей и народными играми
+              народов, проживающих в Кузбассе. Мы собираем материал о шести
+              культурах, которые веками живут рядом на одной земле.
+            </p>
+          </div>
+          <div class="about__links" aria-label="Разделы сайта">
+            <a href="traditions.html">Традиции</a>
+            <a href="cuisine.html">Кухня</a>
+            <a href="history.html">История</a>
+            <a href="games.html">Игры</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="team" aria-labelledby="team-title">
+        <p class="eyebrow">03 · Команда</p>
+        <h2 class="section-title" id="team-title">Над проектом работали</h2>
+        <p class="section-intro">
+          Сайт собрали участники летнего лагеря: исследовали материал, писали
+          тексты, рисовали иллюстрации и программировали игры.
+        </p>
+
+        <ul class="team__list">
+          <li class="team__member">
+            <figure class="team__photo">
+              <img
+                src="images/team/nurgazin.jpg"
+                alt="Нургазин Иван Вячеславович"
+                width="800"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <div class="team__body">
+              <p class="team__name">Нургазин Иван Вячеславович</p>
+              <p class="team__role">Педагог, руководитель проекта</p>
+            </div>
+          </li>
+          <li class="team__member">
+            <figure class="team__photo">
+              <img
+                src="images/team/dev-1.png"
+                alt="Рычков Дмитрий Васильевич"
+                width="800"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <div class="team__body">
+              <p class="team__name">Рычков Дмитрий Васильевич</p>
+              <p class="team__role">Разработчик</p>
+            </div>
+          </li>
+          <li class="team__member">
+            <figure class="team__photo">
+              <img
+                src="images/team/dev-2.jpg"
+                alt="Швец Марк Игоревич"
+                width="800"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <div class="team__body">
+              <p class="team__name">Швец Марк Игоревич</p>
+              <p class="team__role">Разработчик</p>
+            </div>
+          </li>
+          <li class="team__member">
+            <figure class="team__photo">
+              <img
+                src="images/team/dev-3.jpg"
+                alt="Шофинец Егор Денисович"
+                width="800"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <div class="team__body">
+              <p class="team__name">Шофинец Егор Денисович</p>
+              <p class="team__role">Разработчик</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026. Проект «Коренные народы Кузбасса».</p>
+    </footer>
+  </body>
 </html>

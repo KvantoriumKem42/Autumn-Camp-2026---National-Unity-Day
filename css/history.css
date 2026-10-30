@@ -65,6 +65,7 @@
 /* Активный народ: выбранный по ссылке или первый по умолчанию. */
 body:has(#shortsy:target) .hist__tab[href="#shortsy"],
 body:has(#teleuty:target) .hist__tab[href="#teleuty"],
+body:has(#kumandintsy:target) .hist__tab[href="#kumandintsy"],
 body:has(#kalmaki:target) .hist__tab[href="#kalmaki"],
 body:has(#sibirskie-tatary:target) .hist__tab[href="#sibirskie-tatary"],
 body:has(#russkie:target) .hist__tab[href="#russkie"],
@@ -76,6 +77,7 @@ body:not(:has(.hist__panel:target)) .hist__tab[href="#shortsy"] {
 
 body:has(#shortsy:target) .hist__tab[href="#shortsy"]::before,
 body:has(#teleuty:target) .hist__tab[href="#teleuty"]::before,
+body:has(#kumandintsy:target) .hist__tab[href="#kumandintsy"]::before,
 body:has(#kalmaki:target) .hist__tab[href="#kalmaki"]::before,
 body:has(#sibirskie-tatary:target) .hist__tab[href="#sibirskie-tatary"]::before,
 body:has(#russkie:target) .hist__tab[href="#russkie"]::before,

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img">
+  <title>Ковёр с кумандинским орнаментом</title>
+  <defs>
+    <pattern id="kumand-border" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f8f2e4"/>
+      <path d="M12 3 L21 12 L12 21 L3 12 Z" fill="#2f5d7c"/>
+      <path d="M12 8 L16 12 L12 16 L8 12 Z" fill="#c79a45"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" rx="18" fill="#f1ece0"/>
+  <rect x="50" y="34" width="300" height="232" rx="10" fill="#f8f2e4" stroke="#24394a" stroke-width="3"/>
+  <rect x="66" y="50" width="268" height="200" rx="4" fill="url(#kumand-border)" stroke="#b0523a" stroke-width="3"/>
+  <rect x="86" y="70" width="228" height="160" rx="2" fill="#e7eef0" stroke="#24394a" stroke-width="2"/>
+  <g fill="none" stroke="#b0523a" stroke-width="3" stroke-linecap="round">
+    <path d="M104 96 Q104 84 116 84 Q126 84 126 93 Q126 100 119 100 Q115 100 115 96"/>
+    <path d="M296 96 Q296 84 284 84 Q274 84 274 93 Q274 100 281 100 Q285 100 285 96"/>
+    <path d="M104 204 Q104 216 116 216 Q126 216 126 207 Q126 200 119 200 Q115 200 115 204"/>
+    <path d="M296 204 Q296 216 284 216 Q274 216 274 207 Q274 200 281 200 Q285 200 285 204"/>
+  </g>
+  <path d="M200 82 L266 150 L200 218 L134 150 Z" fill="#b0523a" stroke="#24394a" stroke-width="2"/>
+  <path d="M200 102 L246 150 L200 198 L154 150 Z" fill="#f8f2e4" stroke="#c79a45" stroke-width="3"/>
+  <path d="M200 120 L228 150 L200 180 L172 150 Z" fill="#2f5d7c"/>
+  <path d="M200 136 L214 150 L200 164 L186 150 Z" fill="#c79a45"/>
+  <circle cx="200" cy="150" r="4" fill="#f8f2e4"/>
+  <g fill="#2f5d7c">
+    <path d="M100 118 L105 123 L100 128 L95 123 Z"/>
+    <path d="M300 118 L305 123 L300 128 L295 123 Z"/>
+    <path d="M100 172 L105 177 L100 182 L95 177 Z"/>
+    <path d="M300 172 L305 177 L300 182 L295 177 Z"/>
+  </g>
+</svg>
